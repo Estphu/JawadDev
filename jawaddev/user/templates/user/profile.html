@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} Edit Profile | {{ block.super }}{% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+{% endblock links %}
+
+{% block content %}
+    <div class="container d-flex justify-content-center">
+        <div class="auth-wrapper shadow theme-bg-light rounded m-5 p-5">
+            <h5 class="auth-heading text-center mb-3">Profile</h5>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                  <div class="profile-pic-wrapper">
+                    <div class="pic-holder">
+                      <!-- uploaded pic here -->
+                      <img id="profilePic" class="pic" src="{{ user.profile.avatar.url }}">
+                      {% render_field p_form.avatar|attr:'id:newProfilePhoto' class+="uploadProfileInput form-control-file mb-3" %}
+                      <label for="newProfilePhoto" class="upload-file-block">
+                        <div class="text-center">
+                          <div class="mb-2">
+                            <i class="fa fa-camera fa-2x"></i>
+                          </div>
+                          <div class="text-uppercase">
+                            Upload <br /> Profile Photo
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                {% render_field p_form.bio class+="form-control mb-3" placeholder="Bio..." %}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-block mx-auto">
+                        Next<i class="fa fa-solid fa-right-long ms-2"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block scriptlinks %}
+<script src="{% static 'user/js/user.js' %}"></script>
+{% endblock scriptlinks %}

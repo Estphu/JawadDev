@@ -1,0 +1,206 @@
+{% extends 'core/base.html' %}
+
+{% block title %}CV | {{ block.super }}{% endblock title %}
+
+{% block content %}
+<div class="container px-3 px-lg-5">
+    <div class="text-center pt-4">
+        <ul id="filters" class="filters cv list-unstyled">
+            <li class="type" data-filter=".chronological">
+                <i class="fa fa-regular fa-clock me-2" aria-hidden="true"></i>Chronological
+            </li>
+            <li class="type active" data-filter=".functional">
+                <i class="fa fa-solid fa-laptop me-2" aria-hidden="true"></i>Functional
+            </li>
+        </ul>
+    </div>
+    <!-- Project Portfolio CV Isotope -->
+    <div class="row isotope col-12" style="position: relative; height: auto;">
+        <div class="isotope-item functional" style="position: absolute; left: 15px; top:0px">
+            <p class="card-text text-center">
+                An overview of my portfolio projects and skills in web development/programming
+            </p>
+        </div>
+        <article class="cv-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
+            <header class="cv-header pt-0">
+                <div class="media flex-column flex-md-row">
+                    <div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
+                        <div class="primary-info">
+                            <h1 class="name mt-0 mb-2 text-white">M. Jawad Bacha</h1>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="fa fa-solid fa-location-dot me-2 fa-fw" aria-hidden="true"></i>
+                                    <a href="" target="_blank" rel="noreferrer">
+                                        Karachi, Pakistan
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fa fa-regular fa-envelope me-2 fa-fw" aria-hidden="true"></i>
+                                    <a href="" target="_blank" rel="noreferrer">
+                                        jawad4world@gmail.com
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fa fa-solid fa-mobile-screen-button me-2 fa-fw" data-fa-transform="grow-6" aria-hidden="true"></i>
+                                    <a href="" target="_blank" rel="noreferrer">
+                                        +92 348 1387054
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="seconday-info ms-md-auto mt-2">
+                            <ul class="cv-social list-unstyled">
+                                <li class="mb-2">
+                                    <a href="/" target="_blank">
+                                        <span class="fa-container me-3">
+                                            <i class="fa fa-solid fa-globe"></i>
+                                        </span>Website
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="/" target="_blank">
+                                        <span class="fa-container me-3">
+                                            <i class="fa fa-brands fa-github"></i>
+                                        </span>GitHub
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="/" target="_blank">
+                                        <span class="fa-container me-3">
+                                            <i class="fa fa-brands fa-stack-overflow"></i>
+                                        </span>Stack Overflow
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="/" target="_blank">
+                                        <span class="fa-container me-3">
+                                            <i class="fa fa-brands fa-linkedin"></i>
+                                        </span>LinkedIn
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <hr>
+            <div class="cv-intro">
+                <div class="media flex-colum felx-md-row text-center">
+                    <div class="media-body text-start">
+                        <p class="mb-0">
+                            From the moment I developed my first Excel and Access VBA projects, I knew that I wanted to pursue a career developing software with an intuitive end user experience solving complex problems.
+                        </p>
+                        <p class="mb-0 py-2">
+                            Having an extensive background in Business Intelligence, Applications Development, and ETL Projects, I enjoy developing innovative solutions for people who like things “to just work” in the way they would expect.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="cv-body">
+                <div class="row">
+                    <div class="cv-main col-12 col-lg-8 col-xl-9 pe-0 pe-lg-5">
+                        <section class="work-section">
+                            <h3 class="text-uppercase cv-section-heading mb-4">Project / Apps</h3>
+                            <div class="item mb-3">
+                                <!-- Django Blog -->
+                                {% with app_url="#" sc_url="#" pr_url="#" title="Django Blog" desc="A full CRUD application using Django’s models, views, and templates" %}
+                                    {% include "core/widgets/cv-project-card.html" %}
+                                {% endwith %}
+                                {% with app_url="#" sc_url="#" pr_url="#" title="Django Blog REST API Endpoints" desc="API endpoints enabling front-end developers to consume with their preferred framework" %}
+                                    {% include "core/widgets/cv-project-card.html" %}
+                                {% endwith %}
+                                {% with app_url="#" sc_url="#" pr_url="#" title="Countdown: Letters Game" desc="Take on Susie Dent in this simulation of the letters game from Countdown" %}
+                                    {% include "core/widgets/cv-project-card.html" %}
+                                {% endwith %}
+                                {% with app_url="#" sc_url="#" pr_url="#" title="Countdown: Numbers Game" desc="Take on Rachel Riley in this simulation of the numbers game from Countdown" %}
+                                    {% include "core/widgets/cv-project-card.html" %}
+                                {% endwith %}
+                                {% with app_url="#" sc_url="#" pr_url="#" title="Holiday Roulette" desc="Leave it to fate to decide your next luxurious holiday destination in this suspenseful game" %}
+                                    {% include "core/widgets/cv-project-card.html" %}
+                                {% endwith %}
+                                {% with app_url="#" sc_url="#" pr_url="#" title="Scraping" desc="Scrape EU Referendum results or famous speeches using ‘Requests’ and ‘Beautiful Soup’" %}
+                                    {% include "core/widgets/cv-project-card.html" %}
+                                {% endwith %}
+                                {% with app_url="#" sc_url="#" pr_url="#" title="Text Analysis" desc="Calculate the number of words and letters input/pasted by the user" %}
+                                    {% include "core/widgets/cv-project-card.html" %}
+                                {% endwith %}
+                            </div>
+                        </section>
+                        <section class="work-section py-3">
+                            <h3 class="item-title mt-1">
+                                Professional Development
+                            </h3>
+                            <div class="item-content">
+                                Enjoys a continuous programme of self-study for professional and personal development principally targeted towards skills in software engineering, web development, and data science. You can <a class="theme-link" href="{% url "reading_list" %}" target="_blank">review the programming books I have studied</a> here.
+                            </div>
+                        </section>
+                    </div>
+                    <aside class="cv-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
+                        <section class="skills-section-heading mb-4">
+                            <h3 class="text-uppercase cv-section-heading mb-4">
+                                Skills
+                            </h3>
+                            <div class="item">
+                                <h4 class="item-title">
+                                    Technical
+                                </h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <a href="#" class="theme-link" target="_blank">Django / Django Rest</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="theme-link" target="_blank">Python</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="theme-link" target="_blank">PostgreSQL</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="theme-link" target="_blank">HTML/CSS</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="theme-link" target="_blank">Bootstrap</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="theme-link" target="_blank">Javascript</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="theme-link" target="_blank">Docker</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="theme-link" target="_blank">Git / Github</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="education-section py-3">
+                            <h3 class="text-uppercase cv-section-heading mb-4">
+                                Education
+                            </h3>
+                            <ul class="list-unstyled cv-education-list">
+                                <li class="mb-3">
+                                    <div class="cv-degree fw-bold">Bachelors In Computer Science</div>
+                                    <div class="cv-degree-uni text-muted">COMSATS Islamabad,</div>
+                                    <div class="cv-degree-loc text-muted">Abbotabad Campus</div>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="skills-section py-3">
+                            <h3 class="text-uppercase cv-section-heading mb-4">
+                                Interests
+                            </h3>
+                            <ul class="list-unstyled cv-insterests-list">
+                                <li class="mb-2">Travelling</li>
+                                <li class="mb-2">Chess</li>
+                                <li class="mb-2">Podcasts</li>
+                                <li class="mb-2">Debates</li>
+                                <li class="mb-2">Gaming</li>
+                            </ul>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+{% endblock content %}

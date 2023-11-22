@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Contact | {{ block.super }}{% endblock title %}
+
+{% block content %}
+<section class="cta-section pt-5">
+    <div class="container text-center single-col-max-width ">
+      <div class="intro">
+        <p>Please fill in the contact form below or send me an email at
+          <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=CllgCJNqtblXxcKHbvCQFmLmqPffhxBCDLDHpKKdBHtzHXlQLHvtggnmjTvGBtqrKlnKtlTftVq" class="theme-link">jawad4world@gmail.com</a>
+        </p>
+      </div>
+    </div>
+</section>
+<section class="contact-section">
+    <div class="container d-flex shadow py-5 justify-content-center">
+        <div class="auth-wrapper shadow theme-bg-light rounded p-5 w-75">
+            {% if msg_sent %}
+            <div id="successAlert" class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
+                <strong class="me-2">Successfully!</strong> Your message has been sent.
+                <button class="btn-close" data-bs-dismiss='alert'></button>
+            </div>
+            {% endif %}
+            <h5 class="auth-heading text-center mb-3">Get In Touch</h5>
+            <form method="POST" id='contact-form'>
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-solid fa-user"></i></span>
+                    {% render_field form.firstname class+="form-control" placeholder="First Name" %}
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-solid fa-user"></i></span>
+                    {% render_field form.lastname class+="form-control" placeholder="Last Name" %}
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-solid fa-envelope"></i></span>
+                    {% render_field form.email class+="form-control" placeholder="Email" %}
+                </div>
+                <div class="input-group mb-3">
+                    {% render_field form.message class+="form-control" placeholder="Your message here" %}
+                </div>
+                <div class="text-center mb-2">
+                    <button type="submit" class="btn btn-primary btn-block mx-auto">
+                        <i class="fa fa-solid fa-envelope-open me-2"></i></i>Send now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="map-section">
+    <h3 class="sr-only title">Google Map</h3>
+    <div class="gmap-wrapper mb-5" id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14479.30604596399!2d67.33786305!3d24.869774249999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb3330937e1e513%3A0xe83251417ad6a299!2sSteel%20Town%20Bin%20Qasim%20Town%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh!5e0!3m2!1sen!2s!4v1699872758180!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+{% endblock content %}

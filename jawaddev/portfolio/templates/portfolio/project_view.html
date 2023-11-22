@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Portfolio | {{ block.super }}{% endblock title %}
+
+{% block content %}
+<section class="cta-section theme-bg-light py-5">
+<div class="container text-center col-12">
+    <h2 class="heading">Portfolio</h2>
+    <div class="intro">
+        <p>
+            Welcome to my portfolio demonstrating skills with Python, Django, Django REST Framework,
+            JavaScript, HTML, Sass, Bootstrap, PostgreSQL, pytest, Docker, and Git.
+        </p>
+    </div>
+    <a class="btn btn-primary" href="{% url 'contact' %}"><i class="fa fa-solid fa-envelope me-2"></i>Contact Me</a>
+</div>
+</section>
+{% endblock content %}

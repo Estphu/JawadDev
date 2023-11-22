@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home | {{ block.super }}{% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+{% endblock links %}
+
+{% block content %}
+<div class="container">
+  {% include "home/components/home-top.html" %}
+  {% include "home/components/home-middle.html" %}
+  <div class="container">
+    <hr>
+  </div>
+  {% include "home/components/home-middle-a.html" %}
+  <div class="container">
+    <hr>
+  </div>
+  {% include "home/components/home-bottom.html" %}  
+</div>
+{% endblock content %}

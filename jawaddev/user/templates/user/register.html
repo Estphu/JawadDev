@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Register | {{ block.super }}{% endblock title %}
+
+{% block content %}
+<div class="container d-flex shadow py-5 justify-content-center">
+    <div class="auth-wrapper shadow theme-bg-light rounded p-5 w-75">
+        <h5 class="auth-heading text-center mb-3">Register an Account</h5>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {% render_field form.first_name class+="form-control mb-3" placeholder="First Name" %}
+                {% render_field form.last_name class+="form-control mb-3" placeholder="Last Name" %}
+                {% render_field form.username class+="form-control mb-3" placeholder="Username" %}
+                {% render_field form.email class+="form-control mb-3" placeholder="Email" %}
+                {% render_field form.password1 class+="form-control mb-3" placeholder="Password" %}
+                {% render_field form.password2 class+="form-control mb-3" placeholder="Confirm Password" %}
+            </fieldset>
+            <div class="extra mb-4 text-center text-muted">
+                <p>By signing up, you agree to our <a href="#" class="theme-link">privacy policy</a> .</p>
+            </div>
+            <div class="text-center mb-2">
+                <button type="submit" class="btn btn-primary btn-block mx-auto">
+                    <i class="fa fa-solid fa-right-to-bracket me-2"></i>Sign up
+                </button>
+            </div>
+            <div class="border-top pt-2">
+                <small class="text-muted">Already have an account? <a href="{% url "accounts:login" %}" class="theme-link">Sign In</a></small>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

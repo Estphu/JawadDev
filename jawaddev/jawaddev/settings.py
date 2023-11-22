@@ -37,7 +37,27 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'anymail',
+    'ckeditor',
+    'widget_tweaks',
+    "phonenumber_field",
+    'user.apps.UserConfig',
+    'core.apps.CoreConfig',
+    'home.apps.HomeConfig',
+    'blog.apps.BlogConfig',
+    'portfolio.apps.PortfolioConfig',
 ]
+
+# ANYMAIL
+
+ANYMAIL = {
+    "MAILGUN_API_KEY": 'c3f588a1fc56bcd2fad94118efecf4a5-1c7e8847-dc3c044b',
+    "MAILGUN_SENDER_DOMAIN": 'sandbox0ef92156ea3048199e1e35addaea559a.mailgun.org',
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend" 
+DEFAULT_FROM_EMAIL = 'jawad4world@gmail.com'  
+SERVER_EMAIL = 'jawad4world@gmail.com'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,6 +82,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'user.context_processors.profile'
             ],
         },
     },
@@ -75,8 +96,12 @@ WSGI_APPLICATION = 'jawaddev.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '22gGEEEe-fAf24cDGedABf1dcaBc1fGa',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '44125',
     }
 }
 
@@ -115,9 +140,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+LOGIN_REDIRECT_URL = 'user:profile'
+LOGOUT_REDIRECT_URL = 'home'
+
+MEDIA_ROOT = BASE_DIR / 'media'
+
+MEDIA_URL = 'media/'
+
+STATIC_ROOT = BASE_DIR / 'static'
+
 STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# USERNAME: me
+# PASSWORD: Y#SthisisM3
+
+# profile:
+
+# USERNAME: jawad
+# FIRST NAME: M. Jawad
+# LAST NAME: Bacha
+# EMAIL: jawad4world@gmail.com
+# PASSWORD: j@W@dATH!ZP0RTF0LI0
+

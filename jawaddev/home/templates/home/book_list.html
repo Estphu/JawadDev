@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Reading | {{ block.super }}{% endblock title %}
+
+{% block content %}
+<section class="cta-section theme-bg-light py-5">
+    <div class="container col-10">
+        <h2 class="heading text-center">Reading List</h2>
+        <div class="project-intro text-center">
+            <p class="mb-0 lead">
+                Below are the books that I have studied in the domain of programming and web development that I enjoyed the most and derived the most benefit. I hope that you enjoy them as much as I did.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Last Updated Date -->
+<div class="container mt-2 text-end pe-3">
+    <p class="text-small text-muted">
+        <strong>Last Updated:</strong> 14-Nov-23
+    </p>
+</div>
+<section class="project py-3 ps-3">
+    <div class="container">
+        <h2 class="project-section-title mb-1">Books</h2>
+    </div>
+</section>
+{% if book_list %}
+{% for book in book_list %}
+<section class="project px-3 mb-3">
+    <div class="container">
+      <div class="project-meta media d-md-flex flex-column flex-md-row p-4 theme-bg-light">
+        <img class="mb-3 mb-md-0 me-md-5 rounded d-none d-md-inline-block align-self-start" src={{ book.img_url }} width="260px" alt="J Book">
+        <div class="media-body">
+          <div class="site-article">
+            <ul class="client-meta list-unstyled">
+              <li class="mb-2 ms-2"><i class="fas fa-book fa-fw me-2" aria-hidden="true"></i>
+                <strong>
+                  <a class="theme-link" href={{ book.link_url }} target="_blank" rel="noreferrer">
+                  {{ book.title }}
+                  </a>
+                </strong>
+              </li>
+              <li class="mb-2 ms-2"><i class="fas fa-tag fa-fw me-2" aria-hidden="true"></i><span>{{ book.tag }}</span></li>
+              <li class="mb-2 ms-2"><i class="fas fa-user fa-fw me-2" aria-hidden="true"></i><span>{{ book.author }}</span></li>
+            </ul>
+            <hr>
+            <h6 class="font-weight-bold mb-4">Synopsis</h6>
+            <div class="client-bio mb-4">
+              <p>
+                {{ book.desc }}
+              </p>
+              <p>
+                {{ book.extra }}
+              </p>
+              <ul class="list-unstyled">
+                {% for keypoint in book.bookkeypoint_set.all %}
+                <li class="mb-2 ml-2"><i class="fa fa-chevron-right mr-2" aria-hidden="true"></i>
+                    {{keypoint.point}}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endfor %}
+{% endif %}
+{% endblock content %}
