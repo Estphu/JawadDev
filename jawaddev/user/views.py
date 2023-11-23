@@ -12,7 +12,7 @@ class UserRegisterView(CreateView):
     template_name = 'user/register.html'
 
     def get_success_url(self):
-        return reverse('user:profile', kwargs={'profile_id': self.user.profile.id})
+        return reverse('user:profile', kwargs={'profile_slug': self.slug})
     
 @login_required
 def profile(request):

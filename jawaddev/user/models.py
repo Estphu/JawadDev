@@ -9,7 +9,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 # User Profile Model
 
 class Profile(models.Model):
-    slug = models.SlugField(max_length=60, unique=True, null=True)
+    slug = models.SlugField(max_length=60, unique=True, null=True, editable=False)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     label = models.CharField(max_length=60, null=True)
     avatar = models.ImageField(default='user/avatars/default_avatar.jpg', upload_to="user/avatars/")
@@ -22,7 +22,7 @@ class Profile(models.Model):
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.user.get_username())
-        super().save(*args, **kwargs)
+        super().save(*args, **kwargs)  
 
         img = Image.open(self.avatar.path) # Open image
 
@@ -30,4 +30,4 @@ class Profile(models.Model):
         if img.height > 500 or img.width > 500:
             output_size = (500, 500)
             img.thumbnail(output_size) # Resize image
-            img.save(self.avatar.path) # Save it again and override the larger image  
+            img.save(self.avatar.path) # Save it again and override the larger image

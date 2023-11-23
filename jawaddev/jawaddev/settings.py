@@ -82,7 +82,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # 'user.context_processors.profile'
+                'user.context_processors.profile'
             ],
         },
     },
@@ -161,7 +161,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # profile:
 
-# USERNAME: jawad
+# USERNAME: Jawad
 # FIRST NAME: M. Jawad
 # LAST NAME: Bacha
 # EMAIL: jawad4world@gmail.com

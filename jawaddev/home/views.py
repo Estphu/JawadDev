@@ -12,16 +12,16 @@ class HomeView(TemplateView):
     template_name = 'home/home.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["profile"] = Profile.objects.get(user=12)
-        context["projects"] = Project.objects.filter(user=12)
-        context["posts"] = Post.objects.filter(author=12)
+        context["profile"] = Profile.objects.get(user=3)
+        context["projects"] = Project.objects.filter(user=3)
+        context["posts"] = Post.objects.filter(author=3)
         return context
 
 class ReadingListView(ListView):
     model = Book
 
     def get_queryset(self):
-        return Book.objects.filter(user=12)
+        return Book.objects.filter(user=3)
     
 
 

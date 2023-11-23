@@ -6,10 +6,9 @@
       <h5 class="fw-bold mb-3">{{ profile.label }}</h5>
       <div class="bio mb-4 me-5">
         <p>{{ profile.bio }}</p>
-        <p>Feel free to take a look around my portfolio which was built with Python, Django, PostgreSQL, JavaScript, Sass, and Bootstrap.</p>
         <p>
           Feel free to review the
-          <a href="{% if user.is_authenticated %}{% url "accounts:profile" %} {% else %} # {% endif %}" class="theme-link" target="_blank" rel="noreferrer">source code</a>, or even the
+          <a href="{% if user.is_authenticated %}{% url "user:profile" slug=profile.slug %} {% else %} # {% endif %}" class="theme-link" target="_blank" rel="noreferrer">source code</a>, or even the
           <a href="https://github.com/WayneLambert/portfolio/issues?q=is%3Aissue" class="theme-link" target="_blank" rel="noreferrer">project's issues on GitHub</a>.
         </p>
       </div>

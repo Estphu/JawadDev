@@ -5,7 +5,7 @@
       <a href="{% url "home" %}" class="nav-link"><i class="fa fa-house mx-2"></i>Home</a>
     </li>
     <li class="nav-item">
-      <a href="/" class="nav-link"><i class="fa fa-briefcase mx-2"></i>Portfolio Projects</a>
+      <a href="{% url "portfolio:project" %}" class="nav-link"><i class="fa fa-briefcase mx-2"></i>Portfolio Projects</a>
     </li>
     <li class="nav-item">
       <a href="{% url "cv" %}" class="nav-link"><i class="fa fa-align-left mx-2"></i>CV</a>
@@ -20,21 +20,21 @@
       </div>
     </li>
     <li class="nav-item">
-      <a href="{% url 'contact' %}" class="nav-link"><i class="fa fa-envelope mx-2"></i>Contact</a>
+      <a href="{% url "contact" %}" class="nav-link"><i class="fa fa-envelope mx-2"></i>Contact</a>
     </li>
     <li class="nav-item">
       <a href="/" class="nav-link"><i class="fa fa-info-circle mx-2"></i>About me</a>
     </li>
     {% if user.is_authenticated %}
     <li class="nav-item">
-      <a href="{% url "accounts:logout" %}" class="nav-link"><i class="fa fa-solid fa-right-from-bracket mx-2"></i></i>Logout</a>
+      <a href="{% url "user:logout" %}" class="nav-link"><i class="fa fa-solid fa-right-from-bracket mx-2"></i></i>Logout</a>
     </li>
     {% else %}
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-lock fa-fw mx-1"></i>Account</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a href="{% url "accounts:login" %}" class="dropdown-item" type="button"><i class="fa fa-sign-in mx-2"></i>Login</a>
-        <a href="{% url "accounts:register" %}" class="dropdown-item" type="button"><i class="fa fa-pencil-square-o mx-2"></i>Register</a>
+        <a href="{% url "user:login" %}" class="dropdown-item" type="button"><i class="fa fa-sign-in mx-2"></i>Login</a>
+        <a href="{% url "user:register" %}" class="dropdown-item" type="button"><i class="fa fa-pencil-square-o mx-2"></i>Register</a>
       </div>
     </li>
     {% endif %}
