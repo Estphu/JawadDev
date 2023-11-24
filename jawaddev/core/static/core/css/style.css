@@ -576,7 +576,7 @@ body.dark-mode .cv-section-heading {
     font-size: 0.875rem;
 }
 
-.filters .type .active {
+.filters .type.active {
     border-top: 2px solid #1762dd;
     color: #1762dd;
     font-weight: bold;
@@ -588,6 +588,22 @@ body.dark-mode .cv-section-heading {
     cursor: pointer;
     margin-right: 2rem;
     color: #8f8f8f;
+    font-weight: bold;
+}
+
+.filters .type:hover {
+    color: rgb(54, 54, 54);
+}
+
+/* Portfolio Dark Mode */
+
+body.dark-mode .filters .type:hover {
+    color: rgb(189, 186, 186);
+}
+
+body.dark-mode .filters .type.active {
+    border-top: 2px solid #7532FA;
+    color: #7532FA;
     font-weight: bold;
 }
 
