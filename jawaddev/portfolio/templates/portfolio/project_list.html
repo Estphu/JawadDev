@@ -1,0 +1,73 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Portfolio | {{ block.super }}{% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+{% endblock links %}
+
+{% block content %}
+<section class="cta-section theme-bg-light py-5">
+<div class="container text-center col-10">
+    <h2 class="heading">Portfolio</h2>
+    <div class="intro">
+        <p>
+            Welcome to my portfolio demonstrating skills with Python, Django, Django REST Framework,
+            JavaScript, HTML, Sass, Bootstrap, PostgreSQL, pytest, Docker, and Git.
+        </p>
+    </div>
+    <a class="btn btn-primary" href="{% url 'contact' %}"><i class="fa fa-solid fa-envelope me-2"></i>Contact Me</a>
+</div>
+</section>
+<section class="projects-section px-3 py-5 p-md-5">
+    <div class="container">
+        <div class="text-center">
+            <ul id="filters" class="filters mb-5 mx-auto ps-0">
+                <li class="type mb-3 mb-lg-0 active" data-filter="*"><a href="{% url 'portfolio:projects' %}">All</a></li>
+                {% for category in categories %}
+                    <li class="type mb-3 mb-lg-0"><a href="{% url 'portfolio:projects' %}?category={{category.id}}">{{category}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% if projects %}
+            <div class="project-cards row isotope">
+                {% for project in projects %}
+                    <div class="isotope-item col-md-6 mb-5">
+                        <div class="card project-card">
+                        <div class="row g-0">
+                            <div class="col-lg-4 card-img-holder">
+                            <img src={{project.thumbnail.url}} class="card-img" alt="..." />
+                            </div>
+                            <div class="col-lg-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href={{project.link}} class="theme-link">{{project.title}}</a></h5>
+                                <p class="card-text">{{project.desc}}</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="link-mask">
+                            <a class="link-mask-link" href="/blog/"></a>
+                            <div class="link-mask-text text-end">
+                            <a class="btn btn-secondary" href="/blog/">
+                                <i class="fas fa-arrow-circle-right me-2" aria-hidden="true"></i>{{project.btn_title}}
+                            </a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>    
+                {% endfor %}
+            </div>  
+            {% else %}
+            <p>No Projects</p>  
+        {% endif %}
+    </div>
+</section>
+{% endblock content %}
+
+{% block scriptlinks %}
+<script src="{% static 'portfolio/js/portfolio.js' %}"></script>
+<script src="{% static 'portfolio/plugins/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'portfolio/plugins/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'portfolio/js/isotope-custom.js' %}"></script>
+{% endblock scriptlinks %}

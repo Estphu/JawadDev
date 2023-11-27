@@ -216,7 +216,9 @@ input[type="checkbox"] {
     border: none;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
     background-color: #6c23fd;
 }
 
@@ -449,7 +451,7 @@ h6 {
 
 .navbar-toggler:focus {
     box-shadow: none;
-  }
+}
 
 
 .project-meta {
@@ -466,8 +468,7 @@ h6 {
 .item-content,
 .cv-aside .item,
 .cv-education-list,
-.cv-insterests-list
-{
+.cv-insterests-list {
     font-size: 0.875rem;
 }
 
