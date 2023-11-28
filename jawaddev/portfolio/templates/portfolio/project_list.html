@@ -24,9 +24,9 @@
     <div class="container">
         <div class="text-center">
             <ul id="filters" class="filters mb-5 mx-auto ps-0">
-                <li class="type mb-3 mb-lg-0 active" data-filter="*"><a href="{% url 'portfolio:projects' %}">All</a></li>
+                <li class="type mb-3 mb-lg-0 active" data-filter="*"><a class="text-decoration-none" href="{% url 'portfolio:projects' %}">All</a></li>
                 {% for category in categories %}
-                    <li class="type mb-3 mb-lg-0"><a href="{% url 'portfolio:projects' %}?category={{category.id}}">{{category}}</a></li>
+                    <li class="type mb-3 mb-lg-0"><a class='text-decoration-none' href="{% url 'portfolio:projects' %}?category={{category.id}}">{{category}}</a></li>
                 {% endfor %}
             </ul>
         </div>
