@@ -18,7 +18,7 @@ class Project(models.Model):
     desc = models.TextField(max_length=500)
     link = models.URLField(max_length=200)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    categories = models.ManyToManyField(ProjectCategory)
+    categories = models.ForeignKey(ProjectCategory, on_delete=models.CASCADE, null=True)
 
 
     def __str__(self):

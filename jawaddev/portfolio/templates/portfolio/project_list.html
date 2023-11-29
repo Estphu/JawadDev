@@ -24,16 +24,15 @@
     <div class="container">
         <div class="text-center">
             <ul id="filters" class="filters mb-5 mx-auto ps-0">
-                <li class="type mb-3 mb-lg-0 active" data-filter="*"><a class="text-decoration-none" href="{% url 'portfolio:projects' %}">All</a></li>
-                {% for category in categories %}
-                    <li class="type mb-3 mb-lg-0"><a class='text-decoration-none' href="{% url 'portfolio:projects' %}?category={{category.id}}">{{category}}</a></li>
-                {% endfor %}
+                <li class="type mb-3 mb-lg-0 active" data-filter="*">All</li>
+                    <li class="type mb-3 mb-lg-0" data-filter=".django">Django</li>
+                    <li class="type mb-3 mb-lg-0" data-filter=".python">Python</li>
             </ul>
         </div>
         {% if projects %}
-            <div class="project-cards row isotope">
+            <div class="isotope project-cards row">
                 {% for project in projects %}
-                    <div class="isotope-item col-md-6 mb-5">
+                    <div class="isotope-item col-md-6 mb-5 {{project.categories.title}}">
                         <div class="card project-card">
                         <div class="row g-0">
                             <div class="col-lg-4 card-img-holder">
@@ -66,7 +65,6 @@
 {% endblock content %}
 
 {% block scriptlinks %}
-<script src="{% static 'portfolio/js/portfolio.js' %}"></script>
 <script src="{% static 'portfolio/plugins/imagesloaded.pkgd.min.js' %}"></script>
 <script src="{% static 'portfolio/plugins/isotope.pkgd.min.js' %}"></script>
 <script src="{% static 'portfolio/js/isotope-custom.js' %}"></script>
