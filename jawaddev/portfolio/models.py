@@ -27,11 +27,3 @@ class Project(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
-
-        img = Image.open(self.thumbnail.path) # Open image
-
-        # resize image
-        if img.height > 800 or img.width > 600:
-            output_size = (800, 600)
-            img.thumbnail(output_size) # Resize image
-            img.save(self.thumbnail) # Save it again and override the larger image
