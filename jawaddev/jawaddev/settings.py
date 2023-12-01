@@ -49,6 +49,15 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
 ]
 
+# CKEditor
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'extraPlugins': 'codesnippet',
+        'codeSnippet_theme': 'monokai_sublime',
+    },
+}
+
 # ANYMAIL
 
 ANYMAIL = {

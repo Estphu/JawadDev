@@ -25,7 +25,7 @@ class ReadingListView(ListView):
     
 
 
-class CVView(TemplateView):
+class CvView(TemplateView):
     template_name = 'home/cv.html'      
 
 def contact_me(request):

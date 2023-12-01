@@ -1,5 +1,6 @@
 from collections.abc import Iterable
 from typing import Any
+from django.urls import reverse
 from django.utils import timezone
 from django.db import models
 from django.contrib.auth.models import User
@@ -23,7 +24,7 @@ class PostCategory(models.Model):
         ordering = ["title"]        
 
 class Post(models.Model):
-    slug = models.SlugField(max_length=255, unique=True, null=True, editable=False)
+    slug = models.SlugField(max_length=255, unique=True, null=True)
     title = models.CharField(max_length=128)
     content = RichTextField()
     thumbnail = models.ImageField(upload_to='blog/thumbnails/')
@@ -37,6 +38,9 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.author.username} - {self.title}"
+    
+    def get_absolute_url(self):
+        return reverse("blog_detail", kwargs={"slug": self.slug})
 
     def publish(self):
         self.published_date = timezone.now()
