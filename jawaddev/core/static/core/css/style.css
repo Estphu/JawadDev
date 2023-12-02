@@ -222,6 +222,10 @@ input[type="checkbox"] {
     background-color: #6c23fd;
 }
 
+.single-col-max-width {
+    max-width: 820px;
+}
+
 /* Footer CSS START */
 
 .site-footer {

@@ -54,7 +54,6 @@ INSTALLED_APPS = [
 CKEDITOR_CONFIGS = {
     'default': {
         'extraPlugins': 'codesnippet',
-        'codeSnippet_theme': 'monokai_sublime',
     },
 }
 

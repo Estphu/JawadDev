@@ -1,9 +1,0 @@
-{% extends 'core/base.html' %}
-
-{% block title %}{{blog.title}} | {{ block.super }}{% endblock title %}
-
-{% block content %}
-
-{{blog.content | safe}}
-
-{% endblock content %}

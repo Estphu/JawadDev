@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load humanize %}
+
+{% block title %}Blog Home | {{block.super}}{% endblock title %}
+
+{% block content %}
+
+<form method="GET" action="{% url 'blog:post_list' %}">
+    {{ form.as_p }}
+    <button type="btn btn-primary submit">Search</button>
+</form>
+
+{% if query %}
+    <h3>Search results for "{{query}}"</h3>
+{% endif %}
+
+<div class="row">
+    {% if posts %}
+        {% for post in posts %}
+            <div class="col-md-4 mb-5">
+                <div class="card blog-post-card">
+                    <img class="card-img-top img-fluid"
+                        src={{post.thumbnail.url}}>
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <a href="{% url 'blog:post_detail' slug=post.slug %}" class="theme-link">
+                                {{post.title}}
+                            </a>
+                        </h6>
+                        <small class="text-muted">
+                            <ul class="no-bullets">
+                                <li><strong>Published: </strong>{{post.published_date|date:"D d-M-y"}}</li>
+                                <li><strong>Updated: </strong>{{post.updated_date|date:"D d-M-y"}}</li>
+                            </ul>
+                        </small>
+                        <small class="text-muted">
+                            <span class="time">
+                                {{ post.word_count|intcomma }} words
+                            </span>
+                            |
+                            <span class="time">
+                                {{post.reading_time}} min read
+                            </span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% else %}
+        <p>No Blogs</p>
+    {% endif %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}{{post.title}} | {{ block.super }}{% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'blog/css/prism.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+<script src="{% static 'blog/js/prism.js' %}"></script>
+{% endblock links %}
+
+{% block content %}
+
+<article class="blog-post px-3 py-5 p-md-5">
+  <div class="container single-col-max-width">
+    <header class="blog-post-header">
+      <h2 class="title mb-2">{{post.title}}</h2>
+    </header>
+    <div class="article-metadata mt-1">
+      <table class="table table-striped tb-custom-dark">
+        <tbody>
+          <tr>
+            <td>
+              <img class="rounded-circle article-img shadow" src="{{post.author.profile.avatar.url}}">
+            </td>
+            <td>
+              <ul class="list-unstyled">
+                <!-- Author Name or Username -->
+                <li>
+                  <a class="theme-link" href="#">
+                    <strong>{{post.author.first_name}} {{post.author.last_name}}</strong>
+                  </a>
+                </li>
+    
+                <!-- Published and Updated Dates -->
+                <li>
+                  <small class="text-muted">
+                    <strong>Published:</strong>
+                    {{post.published_date|date:"D d-M-y"}} ({{post.published_date|naturaltime}}) |
+                    <strong>Updated:</strong>
+                    {{post.updated_date|date:"D d-M-y"}} ({{post.updated_date|naturaltime}})
+                  </small>
+                </li>
+    
+                <!-- Post Categories -->
+                <li>
+                  <small class="text-muted">
+                    <strong>Categories:</strong>
+                      {% for category in post.categories.all %}
+                        <a class="theme-link" href="#">
+                          {{category.title}}
+                        </a>
+                      {% endfor %}
+                  </small>
+                </li>
+    
+                <!-- Word Count, Reading Time, and Update/Delete Links (if authenticated) -->
+                <li>
+                  <small class="text-muted">
+                    <span class="time">{{post.word_count}} words</span> |
+                    <span class="time">{{post.reading_time}} min read</span>
+                    
+                  </small>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="blog-post-body">
+      <figure class="blog-banner">
+        <img class="img-fluid" src="{{post.thumbnail.url}}" width="100%">
+      </figure>
+      {{post.content | safe}}
+    </div>
+  </div>
+</article>
+
+
+{% endblock content %}
