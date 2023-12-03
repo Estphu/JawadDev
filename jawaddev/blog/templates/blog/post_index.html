@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+
+{% block title %}Blog Index | {{block.super}}{% endblock title %}Blog Index | {{block.super}}
+
+{% block content %}
+
+{% for category in categories %}
+ <ul class="list-unstyled">
+    {% for post in category.post_set.all %}
+    <li><a href="{% url 'blog:post_detail' slug=post.slug %}" class="theme_link">{{post.title}}</a></li>
+    {% endfor %}
+ </ul>
+{% endfor %}
+
+{% endblock content %}

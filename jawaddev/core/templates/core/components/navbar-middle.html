@@ -14,7 +14,7 @@
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-blog fa-fw mx-1"></i>Blog</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a href="{% url 'blog:post_list' %}" class="dropdown-item"><i class="fas fa-home fa-fw mx-2"></i>Home</a>
-        <a href="/" class="dropdown-item"><i class="fa fa-list mx-2"></i>Index</a>
+        <a href="{% url 'blog:post_index' %}" class="dropdown-item"><i class="fa fa-list mx-2"></i>Index</a>
         <a href="/" class="dropdown-item"><i class="fa fa-info-circle mx-2"></i>Contents</a>
         <a href="/" class="dropdown-item"><i class="fa fa-search mx-2"></i>Search</a>
       </div>
