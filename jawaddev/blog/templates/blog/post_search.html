@@ -1,11 +1,11 @@
 {% extends "core/base.html" %}
 
-{% block title %}Search Post | {{block.super}}{% endblock title %}
+{% block title %}Blog Search | {{block.super}}{% endblock title %}
 
 {% block content %}
 <div class="cta-section theme-bg-light py-5">
     <div class="container col-8 text-center">
-        <form method="GET" class="search-form justify-content-center pt-3" action="{% url 'blog:post_list' %}">
+        <form method="GET" class="search-form justify-content-center pt-3" action="{% url 'blog:post_content' %}">
             {{ form }}
         </form>
     </div>

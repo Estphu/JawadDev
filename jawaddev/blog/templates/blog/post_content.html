@@ -1,0 +1,122 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Blog Contents | {{block.super}}{% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock links %}
+
+{% block content %}
+<div class="cta-section theme-bg-light py-5">
+    <div class="container col-8 text-center">
+        <form method="GET" class="search-form justify-content-center pt-3" action="{% url 'blog:post_content' %}">
+            {{ form }}
+        </form>
+    </div>
+</div>
+<h6 class="text-center mt-5">
+    {% if query %}
+    Search results for "{{query}}"
+    {% else %}
+    1 post covering 1 category
+    {% endif %}
+</h6>
+    {% if posts %}
+        {% for post in posts  %}
+            <article class="blog-post px-3 py-5 p-md-5">
+                <div class="container single-col-max-width border">
+                    <div class="article-metadata mt-1">
+                    <table class="table table-striped tb-custom-dark">
+                        <tbody>
+                        <tr>
+                            <td>
+                            <img class="rounded-circle article-img shadow" src="{{post.author.profile.avatar.url}}">
+                            </td>
+                            <td>
+                            <ul class="list-unstyled">
+                                <!-- Author Name or Username -->
+                                <li>
+                                <a class="theme-link" href="#">
+                                    <strong>{{post.author.first_name}} {{post.author.last_name}}</strong>
+                                </a>
+                                </li>
+
+                                <!-- Published and Updated Dates -->
+                                <li>
+                                <small class="text-muted">
+                                    <strong>Published:</strong>
+                                    {{post.published_date|date:"D d-M-y"}} ({{post.published_date|naturaltime}}) |
+                                    <strong>Updated:</strong>
+                                    {{post.updated_date|date:"D d-M-y"}} ({{post.updated_date|naturaltime}})
+                                </small>
+                                </li>
+
+                                <!-- Post Categories -->
+                                <li>
+                                <small class="text-muted">
+                                    <strong>Categories:</strong>
+                                    {% for category in post.categories.all %}
+                                        <a class="theme-link" href="#">
+                                        {{category.title}}
+                                        </a>
+                                    {% endfor %}
+                                </small>
+                                </li>
+
+                                <!-- Word Count, Reading Time, and Update/Delete Links (if authenticated) -->
+                                <li>
+                                <small class="text-muted">
+                                    <span class="time">{{post.word_count}} words</span> |
+                                    <span class="time">{{post.reading_time}} min read</span>
+                                    
+                                </small>
+                                </li>
+                            </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="media mb-3">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="{{post.thumbnail.url}}" class="img-fluid rounded-start" alt="image">
+                          </div>
+                          <div class="col-md-7 ms-md-3">
+                            <div class="media-body">
+                              <h6 class="title"><a href={% url 'blog:post_detail' slug=post.slug %} class="theme-link">{{post.title}}</a></h6>
+                              <div class="intro"><p>{{post.content|safe|truncatewords:30}}</p></div> <!-- Pagination is an important method to restrict the number of database objects in any given view. Pagination implemented well enables users to navigate your content as they need it in addition to keeping your site … -->
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </article>        
+        {% endfor %}
+        <ul class="pagination justify-content-center">
+            {% if paginated_posts.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ paginated_posts.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ paginated_posts.number }} of {{ paginated_posts.paginator.num_pages }}.
+            </span>
+
+            {% if paginated_posts.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ paginated_posts.next_page_number }}">next</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ paginated_posts.paginator.num_pages }}">last &raquo;</a></li>
+            {% endif %}
+        </ul>    
+    {% else %}
+    <div class="px-3 py-5 p-md-5">
+        <div class="container single-col-max-width">
+            <div class="alert alert-danger" role="alert">
+                No Blog Found
+            </div>
+        </div>
+    </div> 
+    {% endif %}    
+{% endblock content %}

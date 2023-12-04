@@ -1,15 +1,38 @@
 {% extends "core/base.html" %}
+{% load static %}
 
 {% block title %}Blog Index | {{block.super}}{% endblock title %}Blog Index | {{block.super}}
 
-{% block content %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock links %}
 
-{% for category in categories %}
- <ul class="list-unstyled">
-    {% for post in category.post_set.all %}
-    <li><a href="{% url 'blog:post_detail' slug=post.slug %}" class="theme_link">{{post.title}}</a></li>
-    {% endfor %}
- </ul>
+{% block content %}
+<div class="cta-section theme-bg-light py-5">
+   <div class="container col-8 text-center">
+       <form method="GET" class="search-form justify-content-center pt-3" action="{% url 'blog:post_content' %}">
+         {{ form }}
+       </form>
+   </div>
+</div>
+{% for item in categories_with_posts %}
+   <div class="container single-col-max-width alert index-alert">
+      <div class="card blog-post-card mb-3">
+         <h6 class="mt-2 ms-2">
+            1 post about <a href="/" class="theme-link">{{item.category.title}}</a>
+         </h6>
+      </div>
+      {% for post in item.posts %}
+         <article class="blog-post ms-3">
+            <h6 class="card-title">
+            <a class="theme-link" href="{% url 'blog:post_detail' slug=post.slug %}">
+               <i class="fa fa-solid fa-caret-right me-2" aria-hidden="true"></i>{{post.title}}
+            </a>
+            </h6>
+         </article>
+      {% endfor %}
+   </div>
+   {% comment %} {% endif %} {% endcomment %}
 {% endfor %}
 
 {% endblock content %}

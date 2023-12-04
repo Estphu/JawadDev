@@ -130,8 +130,7 @@
     transition: .5s;
 }
 
-.skills-section .item:hover,
-.blog-post-card:hover {
+.skills-section .item:hover {
     transform: scale(1.1);
 }
 

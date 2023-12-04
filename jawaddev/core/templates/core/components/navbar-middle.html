@@ -15,8 +15,8 @@
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a href="{% url 'blog:post_list' %}" class="dropdown-item"><i class="fas fa-home fa-fw mx-2"></i>Home</a>
         <a href="{% url 'blog:post_index' %}" class="dropdown-item"><i class="fa fa-list mx-2"></i>Index</a>
-        <a href="/" class="dropdown-item"><i class="fa fa-info-circle mx-2"></i>Contents</a>
-        <a href="/" class="dropdown-item"><i class="fa fa-search mx-2"></i>Search</a>
+        <a href="{% url 'blog:post_content' %}" class="dropdown-item"><i class="fa fa-info-circle mx-2"></i>Contents</a>
+        <a href="{% url 'blog:post_search' %}" class="dropdown-item"><i class="fa fa-search mx-2"></i>Search</a>
       </div>
     </li>
     <li class="nav-item">
