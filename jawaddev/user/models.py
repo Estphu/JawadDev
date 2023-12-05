@@ -9,7 +9,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 # User Profile Model
 
 class Profile(models.Model):
-    slug = models.SlugField(max_length=60, unique=True, null=True, editable=False)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     label = models.CharField(max_length=60, null=True)
     avatar = models.ImageField(default='user/avatars/default_avatar.jpg', upload_to="user/avatars/")

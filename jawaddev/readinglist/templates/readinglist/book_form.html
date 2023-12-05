@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Add Reading List | {{ block.super }}{% endblock title %}
+
+{% block content %}
+    <section class="reading-section">
+        <div class="container d-flex shadow py-5 justify-content-center">
+            <div class="auth-wrapper shadow theme-bg-light rounded p-5">
+                <h5 class="auth-heading text-center mb-3">Add a New Book</h5>
+                <form method="POST" id='book-form'>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {% render_field form.thumbnail_url class+="form-control" placeholder="Thumbnail URL" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.link_url class+="form-control" placeholder="Link URL" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.title class+="form-control" placeholder="Title" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.tag class+="form-control" placeholder="Tag" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.author class+="form-control" placeholder="Author" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.desc class+="form-control" placeholder="Description" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.extra class+="form-control" placeholder="Extra" %}
+                    </div>
+                    <div class="mb-3">
+                        {{form.is_published}}<spam class="ms-2">Publish</spam>
+                    </div>
+                    <div class="text-center mb-2">
+                        <button type="submit" class="btn btn-primary btn-block mx-auto">Save</button>
+                    </div>
+                    <div class="text-center mb-2">
+                        <a href="{% url 'readinglist:book_list' %}" class="btn btn-secondary btn-block">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>    
+    </section>
+{% endblock content %}

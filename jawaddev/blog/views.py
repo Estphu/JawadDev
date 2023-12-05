@@ -14,9 +14,9 @@ class PostListView(ListView):
     def get_queryset(self):
         query = self.request.GET.get('q', '')
         if query:
-            return Post.objects.filter(title__icontains=query)
+            return Post.objects.filter(title__icontains=query, is_published=True)
         else:
-            return Post.objects.all()
+            return Post.objects.filter(is_published=True)
         
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)  
@@ -36,14 +36,14 @@ class PostIndexView(ListView):
     form_class = PostSearchForm
 
     def get_queryset(self):
-        return PostCategory.objects.filter(post__isnull=False).distinct()
+        return PostCategory.objects.filter(post__isnull=False, is_published=True).distinct()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = self.form_class(self.request.GET)
         categories = context['categories']
         context['categories_with_posts'] = [
-            {'category': category, 'posts': Post.objects.filter(categories=category)}
+            {'category': category, 'posts': Post.objects.filter(categories=category, is_published=True)}
             for category in categories
         ]
         return context
@@ -58,9 +58,9 @@ class PostContentView(ListView):
     def get_queryset(self):
         q = self.request.GET.get('query', '')
         if q:
-            return Post.objects.filter(title__icontains=q)
+            return Post.objects.filter(title__icontains=q, is_published=True)
         else:
-            return Post.objects.all()
+            return Post.objects.filter(is_published=True)
         
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

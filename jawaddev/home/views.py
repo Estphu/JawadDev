@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView
 from django.core.mail import send_mail
 from .forms import ContactForm
-from .models import Book
 from user.models import Profile
 from portfolio.models import Project
 from blog.models import Post
@@ -14,16 +13,9 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["profile"] = Profile.objects.get(user=3)
         context["projects"] = Project.objects.filter(user=3)
-        context["posts"] = Post.objects.filter(author=3)
+        context["posts"] = Post.objects.filter(author=3, is_published=True)
         return context
-
-class ReadingListView(ListView):
-    model = Book
-
-    def get_queryset(self):
-        return Book.objects.filter(user=3)
     
-
 
 class CvView(TemplateView):
     template_name = 'home/cv.html'      

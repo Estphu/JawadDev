@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'core.apps.CoreConfig',
     'home.apps.HomeConfig',
+    'readinglist.apps.ReadinglistConfig',
     'blog.apps.BlogConfig',
     'portfolio.apps.PortfolioConfig',
 ]

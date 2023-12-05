@@ -23,8 +23,8 @@ urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path('contact/',views.contact_me,name='contact'),
     path('cv/',views.CvView.as_view(),name='cv'),
-    path('reading-list/',views.ReadingListView.as_view(),name='reading_list'),
     path('',include('user.urls')),
+    path('reading-list/',include('readinglist.urls')),
     path('portfolio/',include('portfolio.urls')),
     path('blog/',include('blog.urls'))
 ]
