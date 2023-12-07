@@ -14,7 +14,7 @@
                                 src={{post.thumbnail.url}}>
                             <div class="card-body">
                                 <h6 class="card-title">
-                                    <a href="#" class="theme-link">
+                                    <a href="{% url 'blog:post_detail' slug=post.slug %}" class="theme-link">
                                         {{post.title}}
                                     </a>
                                 </h6>

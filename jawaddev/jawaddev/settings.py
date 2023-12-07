@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'django.contrib.humanize',
     'anymail',
     'ckeditor',
@@ -48,12 +49,15 @@ INSTALLED_APPS = [
     'readinglist.apps.ReadinglistConfig',
     'blog.apps.BlogConfig',
     'portfolio.apps.PortfolioConfig',
+    'api.apps.ApiConfig',
 ]
 
 # CKEditor
-
 CKEDITOR_CONFIGS = {
     'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 800,
         'extraPlugins': 'codesnippet',
     },
 }

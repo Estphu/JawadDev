@@ -11,6 +11,7 @@ django-widget-tweaks = "*"
 django-anymail = "*"
 django-ckeditor = "*"
 django-phonenumber-field = {extras = ["phonenumberslite"], version = "*"}
+djangorestframework = "*"
 
 [dev-packages]
 

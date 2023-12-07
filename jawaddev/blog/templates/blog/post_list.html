@@ -17,6 +17,11 @@
         </form>
     </div>
 </div>
+{% if user.is_authenticated %}
+<h2 class="heading text-center">
+        <a href="{% url 'blog:post_add' %}"><i class="fa fa-solid fa-square-plus me-2"></i></a>
+    Create Post</h2>
+{% endif %}
 <h6 class="text-center mt-5">
     {% if query %}
     Search results for "{{query}}"
@@ -31,6 +36,12 @@
                 {% for post in posts %}
                     <div class="col-md-4 mb-5">
                         <div class="card blog-post-card">
+                            {% if user.is_authenticated %}
+                                <div class="container text-end">
+                                    <a href="{% url 'blog:post_edit' slug=post.slug %}"><i class="fa fa-solid fa-pen-to-square me-2"></i></a>
+                                    <a href="{% url 'blog:post_remove' slug=post.slug %}"><i class="fa fa-solid fa-trash-can"></i></a>
+                                </div>
+                            {% endif %}
                             <img class="card-img-top img-fluid"
                                 src={{post.thumbnail.url}}>
                             <div class="card-body">

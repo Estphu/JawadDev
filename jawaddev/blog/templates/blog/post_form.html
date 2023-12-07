@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Add Post | {{ block.super }}{% endblock title %}
+
+{% block content %}
+    <section class="project-section">
+        <div class="container d-flex shadow py-5 justify-content-center">
+            <div class="auth-wrapper shadow theme-bg-light rounded p-5">
+                <h5 class="auth-heading text-center mb-3">Add a New Project</h5>
+                <form method="POST" id='project-form'>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {% render_field form.title class+="form-control" placeholder="Title" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.content class+="form-control" placeholder="Content" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.thumbnail class+="form-control" placeholder="Button Title" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.word_count class+="form-control" placeholder="Word Count" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.reading_time class+="form-control" placeholder="Reading Time" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.categories class+="form-control" %}
+                    </div>
+                    <div class="mb-3">
+                        {% render_field form.is_published class+="form-control" %}
+                    </div>
+                    <div class="text-center mb-2">
+                        <button type="submit" class="btn btn-primary btn-block mx-auto">Save</button>
+                    </div>
+                    <div class="text-center mb-2">
+                        <a href="{% url 'portfolio:project_list' %}" class="btn btn-secondary btn-block">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>    
+    </section>
+{% endblock content %}

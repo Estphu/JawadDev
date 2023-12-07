@@ -26,5 +26,6 @@ urlpatterns = [
     path('',include('user.urls')),
     path('reading-list/',include('readinglist.urls')),
     path('portfolio/',include('portfolio.urls')),
-    path('blog/',include('blog.urls'))
+    path('blog/',include('blog.urls')),
+    path('api/',include('api.urls', namespace='api')),
 ]

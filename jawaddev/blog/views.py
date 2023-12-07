@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
-from django.views.generic import DetailView, ListView, View
+from django.views.generic import DetailView, ListView, View, CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.urls import reverse_lazy
 from .models import Post, PostCategory
 from .forms import PostSearchForm
 
@@ -47,6 +48,30 @@ class PostIndexView(ListView):
             for category in categories
         ]
         return context
+    
+class PostCreateView(CreateView):
+    template_name = 'blog/post_form.html'
+    success_url = reverse_lazy('blog:post_list')
+    model = Post
+    fields = ['title', 'content', 'thumbnail', 'word_count', 'reading_time', 'categories', 'is_published']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
+    def get_queryset(self):
+        return Post.objects.filter(user=self.request.user)
+
+class PostUpdateView(UpdateView):
+    template_name = 'blog/post_form.html'
+    success_url = reverse_lazy('blog:post_list')
+    model = Post
+    fields = ['title', 'content', 'thumbnail', 'word_count', 'reading_time', 'categories', 'is_published']
+
+class PostDeleteView(DeleteView):
+    template_name = 'blog/post_confirm_delete.html'
+    success_url = reverse_lazy('blog:post_list')
+    model = Post         
     
 class PostContentView(ListView):
     model = Post

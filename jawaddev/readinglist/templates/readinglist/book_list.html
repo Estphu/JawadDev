@@ -64,13 +64,19 @@
               </p>
               {% if user.is_authenticated %}
               <div class="container text-end">
-                <a href="{% url 'readinglist:book_kp_add' %}"><i class="fa fa-solid fa-square-plus"></i></a>
+                <a href="{% url 'readinglist:book_kp_add' pk=book.pk %}"><i class="fa fa-solid fa-square-plus"></i></a>
               </div>
               {% endif %}
               <ul class="list-unstyled">
                 {% for keypoint in book.bookkeypoint_set.all %}
                 <li class="mb-2 ml-2"><i class="fa fa-chevron-right mr-2" aria-hidden="true"></i>
                     {{keypoint.point}}
+                    {% if user.is_authenticated %}
+                    <div class="container text-end">
+                    <a href="{% url 'readinglist:book_kp_edit' pk=keypoint.pk %}"><i class="fa fa-solid fa-pen-to-square me-2"></i></a>
+                    <a href="{% url 'readinglist:book_kp_remove' pk=keypoint.pk %}"><i class="fa fa-solid fa-trash-can"></i></a>
+                    </div>
+                {% endif %}
                 </li>
                 {% endfor %}
               </ul>
