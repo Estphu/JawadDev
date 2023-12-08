@@ -1,0 +1,55 @@
+{% extends "rest_framework/base.html" %}
+{% load i18n %}
+{% load rest_framework %}
+{% load static %}
+
+{% block title %}Blog API Endpoints | JawadDev{% endblock title %}
+
+{% comment %} {% block style %}
+{{block.super}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{% static 'api/css/api.css' %}">
+{% endblock style %}
+
+{% block branding %}
+    <span>
+        <a class="navbar-brand" href="#" title="JawadDev Home Page" target="_blank">
+            <i class="fa fa-house"></i>
+        </a>
+        <a class="navbar-brand" href="#" title="Blog Home Page" target="_blank">
+            <i class="fa fa-solid fa-blog"></i>
+        </a>
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-left-right" title="Blog API Endpoints Home Page" target="_blank"></i>
+        </a>
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-brands fa-github" title="Blog API Source Code" target="_blank"></i>
+        </a>
+    </span>
+{% endblock branding %}
+
+{% block content %}
+    <div class="header">
+        <h1>Post List API</h1>
+    </div>
+    {{block.super}}
+    <!-- Display JSON data -->
+    <pre>{{ json_data | safe | json_script:"json-data" }}</pre>
+{% endblock %}
+
+{% block page_header %}
+    <div class="header">
+        <h1>{{ page_header_name }}</h1>
+    </div>
+{% endblock %}
+
+{% block description %}
+        <p>API endpoint that enables a list of posts to be browsed including related model data and auxhiliary properties.</p>
+        <p>The configured endpoint purposefully does not permit a POST method as I do not want others creating new posts in the database.</p>
+{% endblock description %}
+
+{% block script %}
+{{block.super}}
+<!-- Font Awesome JS -->
+<script src="https://kit.fontawesome.com/8651153301.js" crossorigin="anonymous"></script>  
+{% endblock script %} {% endcomment %}
