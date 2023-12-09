@@ -16,7 +16,7 @@ class ProjectCreatView(LoginRequiredMixin, CreateView):
     template_name = "portfolio/project_form.html"
     success_url = reverse_lazy('portfolio:project_list')
     model = Project
-    fields = ['title', 'thumbnail', 'btn_title', 'desc', 'link', 'categories']
+    fields = ['title', 'thumbnail', 'btn_title', 'desc', 'link', 'categories', 'featured']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -30,7 +30,7 @@ class ProjectUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "portfolio/project_form.html"
     success_url = reverse_lazy('portfolio:project_list')
     model = Project
-    fields = ['title', 'thumbnail', 'btn_title', 'desc', 'link', 'categories']
+    fields = ['title', 'thumbnail', 'btn_title', 'desc', 'link', 'categories', 'featured']
 
 class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     template_name = "portfolio/project_confirm_delete.html"

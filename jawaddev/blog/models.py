@@ -24,17 +24,17 @@ class PostCategory(models.Model):
         ordering = ["title"]        
 
 class Post(models.Model):
-    slug = models.SlugField(max_length=255, unique=True, null=True)
+    slug = models.SlugField(max_length=255, unique=True, null=True, editable=False)
     title = models.CharField(max_length=128)
     content = RichTextField()
     thumbnail = models.ImageField(upload_to='blog/thumbnails/')
     published_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
-    is_published = models.BooleanField(default=False)
     word_count = models.PositiveIntegerField()
     reading_time = models.PositiveIntegerField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     categories = models.ManyToManyField(PostCategory)
+    is_published = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.author.username} - {self.title}"

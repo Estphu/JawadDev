@@ -26,7 +26,13 @@
                         {% render_field form.link class+="form-control" placeholder="Link" %}
                     </div>
                     <div class="mb-3">
+                        <div class="mb-2">
+                            Choose one category:
+                        </div>
                         {% render_field form.categories class+="form-control" %}
+                    </div>
+                    <div class="mb-3">
+                        Feature this project: {{form.featured}}
                     </div>
                     <div class="text-center mb-2">
                         <button type="submit" class="btn btn-primary btn-block mx-auto">Save</button>

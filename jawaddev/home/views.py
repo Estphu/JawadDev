@@ -12,7 +12,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["profile"] = Profile.objects.get(user=3)
-        context["projects"] = Project.objects.filter(user=3)
+        context["projects"] = Project.objects.filter(user=3, featured=True)
         context["posts"] = Post.objects.filter(author=3, is_published=True)
         return context
     

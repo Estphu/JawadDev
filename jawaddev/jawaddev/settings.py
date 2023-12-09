@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'portfolio.apps.PortfolioConfig',
     'api.apps.ApiConfig',
+    'pdftodocx.apps.PdftodocxConfig',
 ]
 
 # CKEditor
@@ -153,7 +154,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-LOGIN_REDIRECT_URL = 'user:profile'
+LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 MEDIA_ROOT = BASE_DIR / 'media'

@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView
+from django.views import View
 from .forms import UserRegisterForm, UpdateProfileForm
 from django.contrib.auth.decorators import login_required
 
@@ -32,4 +33,4 @@ def profile(request):
         'p_form': p_form
     }
 
-    return render(request, 'user/profile.html', context)    
+    return render(request, 'user/profile.html', context)

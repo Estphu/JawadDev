@@ -7,7 +7,7 @@
     <section class="project-section">
         <div class="container d-flex shadow py-5 justify-content-center">
             <div class="auth-wrapper shadow theme-bg-light rounded p-5">
-                <h5 class="auth-heading text-center mb-3">Add a New Project</h5>
+                <h5 class="auth-heading text-center mb-3">Add a New Post</h5>
                 <form method="POST" id='project-form'>
                     {% csrf_token %}
                     <div class="mb-3">
@@ -26,10 +26,13 @@
                         {% render_field form.reading_time class+="form-control" placeholder="Reading Time" %}
                     </div>
                     <div class="mb-3">
+                        <div class="mb-2">
+                            Categories:
+                        </div>
                         {% render_field form.categories class+="form-control" %}
                     </div>
                     <div class="mb-3">
-                        {% render_field form.is_published class+="form-control" %}
+                        Publish this post: {{form.is_published}}
                     </div>
                     <div class="text-center mb-2">
                         <button type="submit" class="btn btn-primary btn-block mx-auto">Save</button>

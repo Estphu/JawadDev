@@ -49,7 +49,7 @@
                             </div>
                             <div class="col-lg-8">
                             <div class="card-body">
-                                <h5 class="card-title"><a href={{project.link}} class="theme-link">{{project.title}}</a></h5>
+                                <h5 class="card-title"><a href="/" class="theme-link">{{project.title}}</a></h5>
                                 <p class="card-text">{{project.desc}}</p>
                             </div>
                             </div>
@@ -57,11 +57,14 @@
                         <div class="link-mask">
                             <a class="link-mask-link" href="#"></a>
                             <div class="link-mask-text text-center">
-                                <div class="container text-end">
-                                    <a href="{% url 'portfolio:project_edit' pk=project.pk %}"><i class="fa fa-solid fa-pen-to-square me-2"></i></a>
-                                    <a href="{% url 'portfolio:project_remove' pk=project.pk %}"><i class="fa fa-solid fa-trash-can"></i></a>
-                                </div>    
-                                <a class="btn btn-secondary" href="{% url 'api:post-list' %}">
+                                {% if user.is_authenticated %}
+                                    <div class="container text-end">
+                                        <a href="{% url 'portfolio:project_edit' pk=project.pk %}"><i class="fa fa-solid fa-pen-to-square me-2"></i></a>
+                                        <a href="{% url 'portfolio:project_remove' pk=project.pk %}"><i class="fa fa-solid fa-trash-can"></i></a>
+                                    </div>
+                                {% endif %}
+                                <!--api:post-list-->    
+                                <a class="btn btn-secondary" href={{project.link}} target="_blank">
                                     <i class="fas fa-arrow-circle-right me-2" aria-hidden="true"></i>{{project.btn_title}}
                                 </a>
                             </div>

@@ -37,7 +37,7 @@ class PostIndexView(ListView):
     form_class = PostSearchForm
 
     def get_queryset(self):
-        return PostCategory.objects.filter(post__isnull=False, is_published=True).distinct()
+        return PostCategory.objects.filter(post__isnull=False)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

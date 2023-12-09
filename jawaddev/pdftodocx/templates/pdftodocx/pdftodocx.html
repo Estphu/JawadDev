@@ -1,0 +1,52 @@
+{% extends "core/base.html" %}
+
+{% block title %}PDF to DOCX Converter | {{block.super}}{% endblock title %}
+
+{% block links %}
+    <style>
+        .custom-file-btn input[type=file]::-webkit-file-upload-button {
+            display: none;
+          }
+          
+          .custom-file-btn input[type=file]::file-selector-button {
+            display: none;
+          }
+          
+          .custom-file-btn label {
+            background-color: #dde0e3;
+            cursor: pointer;
+          }
+    </style>
+
+{% endblock links %}
+
+{% block content %}
+    <section class="pdftodocx-section">
+        <div class="container text-center">
+            <h2>PDF to WORD</h2>
+            <h6>Convert your PDF to WORD documents with incredible accuracy.</h6>
+            {% if convert.ready %}
+            <form action="{% url "pdftodocx:downloadDocx" fileName=convert.name %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-lg">Download</button>
+            </form>
+            {% else %}
+            <form id="form" method="POST" action="{% url 'pdftodocx:pdftodocxconverter' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-group custom-file-btn">
+                <label class="input-group-text" for="inputGroupFile">Select PDF file</label>
+                <input type="file" class="form-control" id="inputGroupFile" name="selectedFile" accept="application/pdf" required />
+                </div>
+            </form>
+        </div>
+    </section>
+    {% endif %}
+{% endblock content %}
+
+{% block scriptlinks %}
+    <script>
+        document.getElementById("inputGroupFile").onchange = function() {
+            document.getElementById("form").submit();
+        };
+    </script>
+{% endblock scriptlinks %}
