@@ -28,5 +28,6 @@ urlpatterns = [
     path('portfolio/',include('portfolio.urls')),
     path('blog/',include('blog.urls')),
     path('api/',include('api.urls', namespace='api')),
-    path('pdftodocx/',include('pdftodocx.urls'))
+    path('pdf-to-docx/',include('pdftodocx.urls')),
+    path('expense-tracker/',include('expensetracker.urls'))
 ]

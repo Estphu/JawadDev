@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+Expense Tracker Verify | {{block.super}}
+{% endblock title %}
+
+{% block content %}
+
+<form method="post" action="{% url 'expensetracker:expense_profile_verify' slug=expense_profile.slug %}">
+    {% csrf_token %}
+    {% form.as_p %}
+    <input type="submit" class="btn btn-primary btn-block" value="Verify" />
+</form>
+
+{% endblock content %}

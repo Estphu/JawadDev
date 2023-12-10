@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
     'api.apps.ApiConfig',
     'pdftodocx.apps.PdftodocxConfig',
+    'expensetracker.apps.ExpensetrackerConfig',
 ]
 
 # CKEditor
