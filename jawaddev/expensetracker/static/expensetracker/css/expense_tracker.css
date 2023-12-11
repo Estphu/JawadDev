@@ -4,27 +4,19 @@
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #f7f7f7;
+.expense-view-container {
+  margin: 30px auto;
+  width: 400px;
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
+  background-color: #f7f7f7;
 }
 
-.container {
-  margin: 30px auto;
-  width: 350px;
-}
-
-h1 {
+/* h1 {
   letter-spacing: 1px;
   margin: 0;
 }
@@ -38,7 +30,7 @@ h3 {
 h4 {
   margin: 0;
   text-transform: uppercase;
-}
+} */
 
 .inc-exp-container {
   background-color: #fff;
@@ -87,6 +79,11 @@ input[type='number'] {
   width: 100%;
 }
 
+.expense-view-container .form-control {
+ border: none;
+ margin-bottom: 15px;
+}
+
 .btn {
   cursor: pointer;
   background-color: #9c88ff;
@@ -130,7 +127,7 @@ input[type='number'] {
   border-right: 5px solid #c0392b;
 }
 
-.delete-btn {
+/* .delete-btn {
   cursor: pointer;
   background-color: #e74c3c;
   border: 0;
@@ -148,4 +145,18 @@ input[type='number'] {
 
 .list li:hover .delete-btn {
   opacity: 1;
+} */
+
+/* Dark Mode */
+
+body.dark-mode .expense-view-container {
+  background-color: #151e29;
+}
+
+body.dark-mode .inc-exp-container, body.dark-mode .list li,
+body.dark-mode .expense-view-container .form-control
+{
+  color: #fff;
+  background-color: #1e2a3a;
+  
 }

@@ -1,0 +1,41 @@
+{% extends "core/base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}
+Expense Tracker Form | {{block.super}}
+{% endblock title %}
+
+{% block content %}
+<section class="expense-tracker-section">
+    <div class="container d-flex shadow py-5 justify-content-center">
+        <div class="auth-wrapper shadow theme-bg-light rounded p-5">
+            <h5 class="auth-heading text-center mb-3">Add a Expense User</h5>
+            <form method="POST" id='expense-tracker-form'>
+                {% csrf_token %}
+                <div class="mb-3">
+                    {% render_field form.username class+="form-control" placeholder="Username - It should be unique" %}
+                </div>
+                <div class="mb-3">
+                    {% render_field form.balance class+="form-control" placeholder="Balance" %}
+                </div>
+                <div class="mb-3">
+                    {% render_field form.income class+="form-control" placeholder="Income" %}
+                </div>
+                <div class="mb-3">
+                    {% render_field form.question class+="form-control" %}
+                </div>
+                <div class="mb-3">
+                    {% render_field form.answer class+="form-control" placeholder="Answer" %}
+                </div>
+                <div class="text-center mb-2">
+                    <button type="submit" class="btn btn-primary btn-block mx-auto">Create</button>
+                </div>
+                <div class="text-center mb-2">
+                    <a href="{% url 'expensetracker:expense_profile_verify' %}" class="btn btn-secondary btn-block">Already Created? Verify</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

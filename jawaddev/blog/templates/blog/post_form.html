@@ -4,11 +4,11 @@
 {% block title %}Add Post | {{ block.super }}{% endblock title %}
 
 {% block content %}
-    <section class="project-section">
+    <section class="post-section">
         <div class="container d-flex shadow py-5 justify-content-center">
             <div class="auth-wrapper shadow theme-bg-light rounded p-5">
                 <h5 class="auth-heading text-center mb-3">Add a New Post</h5>
-                <form method="POST" id='project-form'>
+                <form method="POST" id='post-form'>
                     {% csrf_token %}
                     <div class="mb-3">
                         {% render_field form.title class+="form-control" placeholder="Title" %}

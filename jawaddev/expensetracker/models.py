@@ -32,6 +32,10 @@ class ExpenseProfile(models.Model):
         self.slug = slugify(self.username)
         super().save(*args, **kwargs)
 
+    # def get_absolute_url(self):
+    #     return reverse("expensetracker:expense_tracker_view", kwargs={"slug": self.slug})
+        
+
 class ExpenseTracker(models.Model):
     profile = models.ForeignKey(ExpenseProfile,on_delete=models.CASCADE)
     expense_text = models.CharField(max_length=50)
@@ -39,4 +43,4 @@ class ExpenseTracker(models.Model):
     expense_type = models.CharField(max_length=50,choices=TYPE)
 
     def __str__(self):
-        return self.name
+        return self.expense_text
