@@ -1,0 +1,78 @@
+{% extends "core/base.html" %}
+
+{% block title %}About | {{block.super}}{% endblock title %}
+
+{% block content %}
+
+<section class="cta-section theme-bg-light py-5">
+    <div class="container single-col-max-width">
+        <h2 class="heading text-center">About Me</h2>
+        <div class="about-intro text-center">
+            <p class="lead mb-0">An informal page to learn more about me and my professional journey.</p>
+        </div>
+    </div>
+</section>
+<!-- Professional Journey -->
+<section class="project px-3 mb-3 mt-5">
+    <div class="container single-col-max-width">
+        <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+            <div class="media-body">
+                <h5 class="fw-bold mb-4">Professional Journey</h5>
+                <div class="bio site-article">
+                    <p>My story of falling in love with programming comes a long time after my story of falling in love with data analysis. During my school years, I was very good at maths and solving problems with logic. I was using computers from an early age having an Atari 820ST. Yeah, you know the ones, the top-loader cassettes that take a noisy forever to load a primitive game. Later, I had a Pentium 75 which got me through my sixth form years.</p>
+                    <p>Fortunately for me, my mum had secretarial skills and thought it would be a good idea for me to learn to type, which is of course a skill that has naturally stood me in good stead for a career in using computers. To this day, I cannot touch type in the tradional way and typing with my little fingers just seems totally alien. We can all be thankful for Intellisense! I can type at a fair pace without looking at the keyboard though and know so many keyboard shortcuts that I can be extremely efficient.</p>
+                    <p>Following using spreadsheets and extensive use of Microsoft Word to produce assignments within my sixth form years, I thought that it would be very useful if I were able to predict just how much money I would have at a given point in the future given certain assumptions around income and expenditure. I proceeded to lay out what I would later discover was called a Cash Flow Forecast. Week-on-week, it would have my earnings given the hours I was working as a Team Leader at a Stir Fry production company in addition to my expenses.</p>
+                    <p>It was a spreadsheet with many COUNTIFs, SUMIFs, VLOOKUPs which I had taught myself in order to be able to make the spreadsheet. With my background in computing and maths, I noticed that I was finding this extremely easy and just felt at ease and in flow with it.</p>
+                    <p>I was able to see the power of spreadsheets for "what-if" analysis and I was hooked. If I were to work an extra 5 hours per week, then in 3 months I would have x number of pounds more in additional savings! Wow! Mind blown!</p>
+                    <p>Of course, such analysis has become run of the mill having done it for so many years now.</p>
+                    <div class="mt-4">
+                        <h5 class="fw-bold mb-4">My Introduction To Programming</h5>
+                    </div>
+                    <p>After working for many years delivering Management Information and Business Intelligence dashboards to senior managers and executive committees, I was tasked with building a database that could automatically take input from users to be able to monitor KPI performance of an HR administration team. I developed a Microsoft Access database with advanced functionality using VBA code to accomplish this.</p>
+                    <p>The database was a massive success in fulfilling the manager's objectives and they were extremely happy with it. I now look back on it and view the code in there as rather primitive.</p>
+                    <p>It was this blend of creating an intuitive user interface and a robust and efficient application that had me completely hooked! I studied several books and courses on VBA development and had used it to build a lot of applications across the department.</p>
+                    <p>My VBA code went from strength to strength until, before I knew it, I was building robust dashboards and applications that was saving users across the business time previously taking hundreds of man-hours worth of laborious manual effort to accomplish.</p>
+                    <table class="mb-3 project-meta">
+                        <tbody>
+                            <tr>
+                                <td><img class="mb-3 mb-md-0 me-md-5 rounded d-none d-md-inline-block" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/41HII-0nFEL._SX342_SY445_.jpg" alt="The Self-Taught Programmer" height="331" width="260"></td>
+                                <td>
+                                    <p>From then, I read a book called <a class="theme-link" href="https://www.amazon.com/Self-Taught-Programmer-Definitive-Programming-Professionally-ebook/dp/B01M01YDQA" target="_blank" rel="noreferrer">'The Self-Taught Programmer' by Cory Althoff</a> which advocated the use of Python. I noticed that the language was written in an expressive and intuitive way that I considered would be the way that I would write a programming language.</p>
+                                    <p>It was around May 2018 when I encountered Python and have studied it avidly ever since.</p>
+                                    <p>One of the big stories in the Python community shortly after getting started was Guido Van Rossum (the inventor of the language and known in the community as the Benevolent Dictator For Life) was stepping down from being Python's leader.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>A bit of further research led me to realise its popularity as a language for scripting, web development, and data analysis. I started learning the Data Science libraries first which seemed incredibly intuitive to me invariably due to Pandas' similarities with Excel.</p>
+                    <p>I continued my learning journey by studying more courses on Udemy, reading books, and writing scripts. When GitHub introduced free private repositories, I started to create more projects and push them to my remote repos.</p>
+                    <p>After feeling more confident with my code, I started using public repositories too and finally building a portfolio which has grown considerably in time both in terms of the number of projects, the variety of features and the testing coverage.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="col-8 mt-5 mb-5">
+<section class="faq-section mb-5">
+    <div class="container single-col-max-width">
+        <h3 class="text-center mb-4">10 Questions to Learn More About Me</h3>
+        <div class="text-center mb-5">Here are a few answers to questions to give you more of a picture about me as a person. They start with professional questions and then move onto more personal ones.</div>
+        <div id="accordionExample" class="accordion accordion-flush theme-bg-light">
+            <div class="accordion-item mb-0">
+                <h5 class="accordion-header" id="headingOne">
+                    <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Other than Python what programming skills do you have?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Naturally, having built a portfolio, I have some skills in other languages and/or programming constructs/disciplines. Throughout the portfolio, there is evidence of using Sass, HTML, etc. In terms of languages, I also know some JavaScript and React but I cannot say that it's at the same level as my Python/Django.</p>
+                    <p>I can add sprinklings of JavaScript to my projects to augment their functionality. This is evidenced with some of the features across my portfolio.</p>
+                </div>
+                </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+

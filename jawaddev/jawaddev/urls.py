@@ -23,11 +23,12 @@ urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path('contact/',views.contact_me,name='contact'),
     path('cv/',views.CvView.as_view(),name='cv'),
+    path('about/',views.AboutView.as_view(),name='about'),
     path('',include('user.urls')),
     path('reading-list/',include('readinglist.urls')),
     path('portfolio/',include('portfolio.urls')),
     path('blog/',include('blog.urls')),
     path('api/',include('api.urls', namespace='api')),
     path('pdf-to-docx/',include('pdftodocx.urls')),
-    path('expense-tracker/',include('expensetracker.urls'))
+    path('expense-tracker/profile/',include('expensetracker.urls'))
 ]

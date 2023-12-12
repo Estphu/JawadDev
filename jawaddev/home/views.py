@@ -18,7 +18,10 @@ class HomeView(TemplateView):
     
 
 class CvView(TemplateView):
-    template_name = 'home/cv.html'      
+    template_name = 'home/cv.html'
+
+class AboutView(TemplateView):
+    template_name = 'home/about.html'
 
 def contact_me(request):
 

@@ -463,6 +463,10 @@ h6 {
     font-size: 0.875rem;
 }
 
+.tbl {
+    font-size: 0.875rem;
+}
+
 /* CV CSS */
 
 .filters,
@@ -721,4 +725,8 @@ body.dark-mode .text-muted {
 body.dark-mode .main-wrapper>.cta-section {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     background: none !important;
+}
+
+body.dark-mode .tbl {
+    color: rgba(255, 255, 255, 0.7);
 }
