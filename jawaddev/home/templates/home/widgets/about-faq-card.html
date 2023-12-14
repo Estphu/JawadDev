@@ -1,0 +1,14 @@
+<div class="accordion-item mb-4 rounded border-0">
+    <div class="card-header theme-bg-light border-0 py-2" id="{{header_lbl}}">
+        <h5 class="{{header_lbl}} mb-0">
+            <button class="btn btn-link fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{collapse_lbl}}" aria-expanded="false" aria-controls="{{collapse_lbl}}">  
+                <i class="fa fa-solid fa-chevron-down me-3"></i>{{question}}
+            </button>
+        </h5>
+    </div>
+    <div id="{{collapse_lbl}}" class="accordion-collapse collapse" aria-labelledby="{{header_lbl}}" data-bs-parent="#accordionFaq">
+        <div class="accordion-body theme-bg-light">
+            {{answer}}
+        </div>
+    </div>
+</div>

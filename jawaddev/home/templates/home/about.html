@@ -1,6 +1,11 @@
 {% extends "core/base.html" %}
+{% load static %}
 
 {% block title %}About | {{block.super}}{% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'core/css/about.css' %}">
+{% endblock links %}
 
 {% block content %}
 
@@ -22,8 +27,8 @@
                     <p>My tale of falling in love with Python and Django comes before my tale of falling in love with programming. I excelled in math and logical problem-solving during my school years. I believe the reason for that was that I had a home tutor for math. I had a Dell Pentium 4 when I first started using computers at a young age. We purchased it sometime in 2009 or 2010. It was a positive experience, and I'm happy I had it.</p>
                     <p>Initially, I acquired knowledge about Microsoft Excel through an online course. Almost all of Excel's formulas and shortcuts were familiar to me at the time, I recalled. Though I wasn't old enough to use it in my career, I was good at it. Upon acquiring that ability, I chose to focus on designing rather than advancing it.</p>
                     <p>I spent a lot of time designing. Initially, I didn't take a formal course in it, but instead watched a lot of tutorials. I've since completed online courses in Photoshop and Illustrator. Photoshop was the software I was using to work with. For 3D modeling, use Blender, Adobe Illustrator, and for video editing I was using Adobe Premiere Pro. From the end of my high school career until the middle of my college career, I was interested in designing. By using Photoshop, I was able to do freelance work. I was never able to use Blender in a professional manner because I was ignorant of 3D modeling. I also thought about learning Figma for user interface design as a skill. Ironically, though, it was during our talk that my friend 'Aaka' introduced me to programming. Since networking piqued his interest more than anything, he advised me to study front-end programming and take courses at Codecademy.</p>
-                    <p>It was the end of 2016. Since then, I have been learning HTML 5 and CSS 3 while developing and using front-end development techniques. I was astounded that a few lines of my code could make changes appear in the browser and that it also corresponded with my prior knowledge. I've developed an interest, so I've decided to major in either software engineering or computer science.</p>
-                    <p>I took admission in COMSATS Abbottabad, It was very far from my home city. So I had to made a little sacrifice for it and live as a hostellite for 4 years. I've learned the core concepts of programming languages and many basic concepts about other relative field like compilers, networking, machine learning, artficial intelligence and microprocessor computing. I also had my first job as an internee there in Abbottix. After that I got permanent and had almost 2 years of experience as a Web Developer.</p>
+                    <p>It was the end of 2016. Since then, I started learning HTML5 and CSS3 while developing and using front-end development techniques. I was astounded that a few lines of my code could make changes appear in the browser and that it also corresponded with my prior knowledge. I've developed an interest, so I've decided to major in either software engineering or computer science.</p>
+                    <p>I took admission in COMSATS Abbottabad, It was very far from my home city. So I had to made a little sacrifice for it and live as a hostellite for 4 years. I've learned the core concepts of programming languages and many basic concepts about other relative fields like compilers, networking, machine learning, artficial intelligence and microprocessor computing. I also had my first job as an internee there in Abbottix. After that I got permanent and had almost 2 years of experience as a Web Developer.</p>
                     <p>In seven semesters, I finished all of my computer science courses, including my final year project, which focused on developing a mobile application that connects influencers and businesses to conduct business. Businessmen could pay influencers to promote their brands. And business owners could find the ideal influencer to promote their product by simply filtering their needs and finding the right influencer to do so.</p>
                     <p>Speaking of mobile applications I worked as a freelancer in Flutter for 1.5 years. I completed two of Angela Yu's premium courses on Udemy. She is a Google Flutter Expert. Yes, I realize that I've mentioned my different skills frequently, but I enjoy learning. Because Flutter is a cross-platform framework, I found it to be very fascinating. In it, I've constructed numerous projects.</p>
                     <div class="mt-4">
@@ -31,6 +36,7 @@
                     </div>
                     <p>My professional introduction to programming I would say was when I got introduce to a C language in my first semster. I become more familiar with ideas like variables, if-else statements, and Object Oriented Programming. I then understand how the logic of the software's back end works. My understanding of how our data is stored and relationships formed between them has also improved thanks to the database course.</p>
                     <p>Python was first presented during my second semester. Its widespread use led me to conclude right away that the language was strong and powerful. However, I decided against it because I was intrigued by Flutter at the time. I did go for it during my fifth semester machine learning course, when I started a Python course offered by Pierian Training.</p>
+                    <p>I required a framework that would allow me to fully utilize my Python knowledge and experience, beyond just using it in the command prompt. I therefore had two options for the framework: Django and Flask. I selected Django because it supports ORM, which eliminated the need for me to write SQL queries for my database, and it uses the MVT architectural structure, which is more structured. You only need to write Python classes and attributes for WSGI and ORM to take care of it for you.</p>
                     <table class="mb-3 project-meta">
                         <tbody>
                             <tr>
@@ -44,8 +50,7 @@
                         </tbody>
                     </table>
                     <p>A bit of further research led me to realise its popularity as a language for scripting, web development, and data analysis.</p>
-                    <p>I required a framework that would allow me to fully utilize my Python knowledge and experience, beyond just using it in the command prompt. I therefore had two options for the framework: Django and Flask. I selected Django because it supports ORM, which eliminated the need for me to write SQL queries for my database, and it uses the MVT architectural structure, which is more structured. You only need to write Python classes and attributes for WSGI and ORM to take care of it for you.</p>
-                    <p>I continued my learning journey by studying more courses on Udemy, reading books, and writing scripts. When GitHub introduced free private repositories, I started to create more projects and push them to my remote repos.</p>
+                    <p>I continued my learning journey by studying more courses on Udemy, reading books, and writing scripts. I started to create more projects and push them to my remote repos.</p>
                     <p>After feeling more confident with my code, I started using public repositories too and finally building a portfolio which has grown considerably in time both in terms of the number of projects, the variety of features and the testing coverage.</p>
                 </div>
             </div>
@@ -57,20 +62,38 @@
     <div class="container single-col-max-width">
         <h3 class="text-center mb-4">10 Questions to Learn More About Me</h3>
         <div class="text-center mb-5">Here are a few answers to questions to give you more of a picture about me as a person. They start with professional questions and then move onto more personal ones.</div>
-        <div class="accordion accordion-flush theme-bg-light" id="accordionFaq" >
-            <div class="accordion-item mb-0 rounded">
-                <h5 class="accordion-header" id="headingOne">
-                    <button class="accordion-button shadow-none rounded fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        <i class="fa fa-solid fa-circle-question fa-lg me-3"></i>Other than Python what programming skills do you have?
-                    </button>
-                </h5>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                    <div class="accordion-body">
-                        <p>Naturally, having built a portfolio, I have some skills in other languages and/or programming constructs/disciplines. Throughout the portfolio, there is evidence of using Sass, HTML, etc. In terms of languages, I also know some JavaScript and React but I cannot say that it's at the same level as my Python/Django.</p>
-                        <p>I can add sprinklings of JavaScript to my projects to augment their functionality. This is evidenced with some of the features across my portfolio.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="accordion accordion-flush" id="accordionFaq" >
+            {% with header_lbl="headingOne" collapse_lbl="collapseOne" question="Other than Python what programming skills do you have?" answer="<p>I am somewhat knowledgeable in a variety of programming languages, including PHP, C, Java, C#, React Native, and maybe a few more that I am forgetting. However, I am well-versed in the languages I worked with while doing Full Stack Web Development.</p><p>I would specifically mention my proficiency with Flutter, which requires knowledge of the Dart programming language, in response to this question. I've worked on it for a year and a half, completed courses, and logged hundreds of hours in practice and research. On it, I have produced a great deal of joint and solo projects.</p><p>I've updated my Github with both public and private flutter repos.</p>" %}
+                {% include "home/widgets/about-faq-card.html" %}
+            {% endwith %}
+            {% with header_lbl="headingTwo" collapse_lbl="collapseTwo" question="Besides programming, mobile and web development, do you have any other computer skills?" answer="<p>I've worked with Adobe Illustrator and Photoshop for design. Additionally, I knew the fundamentals of using Adobe Premiere Pro to edit videos. I was very interested in design when I was in school and in college.</p><p>I've finished several courses and watched a ton of tutorials about Adobe Illustrator and Photoshop; the one I seem to remember was provided by GFX Mentor on YouTube. I've edited photos, made logos, and created postures.</p><p>It aided me in my gigs as well. Occasionally, I still utilize Illustrator and Photoshop. Although I don't use my designing skills to an extremely advanced degree, I'm happy that I haven't given up on them entirely.</p>" %}
+                {% include "home/widgets/about-faq-card.html" %}
+            {% endwith %}
+            {% with header_lbl="headingThree" collapse_lbl="collapseThree" question="What first got you interested in web development?" answer="<p>My friend was the one who introduced me to website development for the first time. Additionally, he advised me to study CSS and HTML. I was therefore intrigued by it right away. However, once I learned Python and Django, I gave it my all.</p><p>When I first started writing HTML code, content would show up on the screen. Although it was nice to see my content on a large screen, I wasn't entirely happy with it because it didn't look good. However, my opinion of it increased as soon as I learned how to use CSS and styled my HTML script. I then wrote numerous html and CSS scripts after that.</p><p>I used to open up any old website and start coding the user interface. The <q>Logan Paul</q> youtuber's website is one that comes to mind. It was his <q>loganpaul.com/shop</q> merchandise website. I started coding the user interface (UI) of his website after seeing it because I used to watch him. For a young me, it was a daunting task. Yes, I did code it.</p>" %}
+                {% include "home/widgets/about-faq-card.html" %}
+            {% endwith %}
+            {% with header_lbl="headingFour" collapse_lbl="collapseFour" question="Do you take the time to work on your personal and professional development?" answer="<p>In my opinion, if you don't work on improving yourself as a developer, you can't advance in the field. I've never really struggled with that because I enjoy learning and am aware of the time-saving benefits and increased competitiveness that come with professional development for developers.</p><p>Courses and document reading are the main sources of my professional development. Although it's a general hobby of mine, I enjoy reading books. I've read books by Robert Kiyosaki, Joseph Murphy, and Malcolm Gladwell. I'm gradually changing this pastime to support my professional growth and enable me to read more books in the field of development.</p>" %}
+                {% include "home/widgets/about-faq-card.html" %}
+            {% endwith %}
+            {% with header_lbl="headingFive" collapse_lbl="collapseFive" question="What developer skills do you want to learn next?" answer="<p>I would like to pursue my Python journey further, focusing on data sciences or artificial intelligence. Massive data availability can lead to the creation of extremely potent AI machines. I enjoy the fact that AI is complex because I enjoy learning about complex technologies. I was struck by its complexity when I was taking an AI course at my university. But it's a different game altogether, and it all boils down to learning and practice.</p>" %}
+                {% include "home/widgets/about-faq-card.html" %}
+            {% endwith %}
+            <hr class="col-8 mt-5 mb-5">
+            {% with header_lbl="headingSix" collapse_lbl="collapseSix" question="Outside of programming and other professional interests, what else do you like to do?" answer="<p>Traveling is something I love doing even more than programming. I've had the good fortune to visit numerous places, and I've never thought that money spent on travel is a waste.</p><p>Every time I've traveled, I've had the impression that my mind has tangibly stretched. I find geography and foreign cultures to be fascinating.</p>" %}
+                {% include "home/widgets/about-faq-card.html" %}
+            {% endwith %}
+            {% with header_lbl="headingSeven" collapse_lbl="collapseSeven" question="Could you name someone you admire? And why?" answer="<p>When I read the biography of Malcolm X. I got really impressed by the personality, his awareness and how brave he was .</p><p>Malcolm X is powerful advocacy for civil rights, impassioned speeches, emphasis on self-empowerment, evolution of beliefs, and fearlessness in addressing systemic oppression. His commitment to justice, cultural pride, and human rights, along with his iconic status as a symbol of resistance, has solidified his place as a favorite personality for those who value his impact on the struggle for equality and empowerment.</p>" %}
+                {% include "home/widgets/about-faq-card.html" %}
+            {% endwith %}
+            {% with header_lbl="headingEight" collapse_lbl="collapseEight" question="Do you like sports?" answer="<p>I no longer play sports. I watch football, UFC, and cricket. People disagree about whether or not chess is a sport game. If it is, I'll say that I play the game and have an decent 1000 elo rating, making me an advanced beginner.</p><p>If I had the time, I would like to keep participating in physical sports.</p>" %}
+                {% include "home/widgets/about-faq-card.html" %}
+            {% endwith %}
+            {% with header_lbl="headingNine" collapse_lbl="collapseNine" question="What is your favourite film?" answer="<p><q>The Godfather</q> is the film that I can consider my favourite. I've watched it many times and I love the masterpiece. Due to its compelling storytelling, iconic characters, masterful direction by Francis Ford Coppola, exploration of powerful themes, cultural impact, timeless quality, critical acclaim, and influence on filmmaking.</p><p>The film's portrayal of the Corleone crime family, complex characters, and themes of power and family resonate with audiences, making it a classic in cinematic history.</p>" %}
+                {% include "home/widgets/about-faq-card.html" %}
+            {% endwith %}
+            {% with header_lbl="headingTen" collapse_lbl="collapseTen" question="Ok, what about gaming? What games do you play?" answer="<p>There aren't any particular games. I like multi-player games because I can play them with my friends and talk to them via Teamspeak at the same time. There is currently a game called Among Us where one of your crewmates is an impostor. You must locate it with the assigned roles. The various modes of play are incredibly entertaining.<p>" %}
+                {% include "home/widgets/about-faq-card.html" %}
+            {% endwith %}
         </div>
     </div>
 </section>
