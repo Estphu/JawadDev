@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+# Load environment variables from a .env file in the project root
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o7841qcq$mrf$x73=0l)wtzjd9ny+&8k+-gf1cna)@$31gu4q&'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -67,8 +72,8 @@ CKEDITOR_CONFIGS = {
 # ANYMAIL
 
 ANYMAIL = {
-    "MAILGUN_API_KEY": 'c3f588a1fc56bcd2fad94118efecf4a5-1c7e8847-dc3c044b',
-    "MAILGUN_SENDER_DOMAIN": 'sandbox0ef92156ea3048199e1e35addaea559a.mailgun.org',
+    "MAILGUN_API_KEY": env('MY_MAILGUN_API_KEY'),
+    "MAILGUN_SENDER_DOMAIN": env('MY_MAILGUN_SENDER_DOMAIN'),
 }
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend" 
 DEFAULT_FROM_EMAIL = 'jawad4world@gmail.com'  
@@ -111,12 +116,12 @@ WSGI_APPLICATION = 'jawaddev.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': '22gGEEEe-fAf24cDGedABf1dcaBc1fGa',
-        'HOST': 'monorail.proxy.rlwy.net',
-        'PORT': '44125',
+        'ENGINE': env('DB_ENGINE'),
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
 

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+from django.db.models import Max
 from .models import Book, BookKeyPoint
 from .forms import BookForm, BookKeyPointForm
 
@@ -13,6 +14,13 @@ class BookListView(ListView):
 
     def get_queryset(self):
         return Book.objects.filter(user=3)
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["latest_updated_date"] = Book.objects.filter(user=3).aggregate(Max('updated_date'))
+        print(context["latest_updated_date"])
+        return context
+    
     
 class BookCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('readinglist:book_list')

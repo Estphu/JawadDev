@@ -16,7 +16,7 @@
 <!-- Last Updated Date -->
 <div class="container mt-2 text-end pe-3">
     <p class="text-small text-muted">
-        <strong>Last Updated:</strong> None
+        <strong>Last Updated:</strong> {{latest_updated_date.updated_date__max|date:"F j, Y"}}
     </p>
 </div>
 <section class="project py-3 ps-3">
@@ -50,7 +50,9 @@
                     </div>
                 {% endif %}
               </li>
-              <li class="mb-2 ms-2"><i class="fas fa-tag fa-fw me-2" aria-hidden="true"></i><span>{{ book.tag }}</span></li>
+              {% if book.tag %}
+                <li class="mb-2 ms-2"><i class="fas fa-tag fa-fw me-2" aria-hidden="true"></i><span>{{ book.tag }}</span></li>
+              {% endif %}
               <li class="mb-2 ms-2"><i class="fas fa-user fa-fw me-2" aria-hidden="true"></i><span>{{ book.author }}</span></li>
             </ul>
             <hr>

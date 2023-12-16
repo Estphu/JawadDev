@@ -1,3 +1,4 @@
+{% load static %}
 <!-- Profile About Me -->
 <section class="about-me-section p-3 p-lg-5">
   <div class="profile-teaser media flex-column flex-lg-row">
@@ -21,6 +22,6 @@
         </div>
       </div>
     </div>
-    <img class="profile-image mb-3 mb-lg-0 ml-lg-5 me-md-0 mt-3" src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/python-django.png" alt="Python and Django" />
+    <img class="profile-image mb-3 mb-lg-0 ml-lg-5 me-md-0 mt-3" src="{% static 'core/images/portfolio-side-thumbnail.png' %}" alt="Python and Django" />
   </div>
 </section>

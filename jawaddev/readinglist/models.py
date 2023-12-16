@@ -8,7 +8,7 @@ class Book(models.Model):
     thumbnail_url = models.URLField(max_length=200)
     link_url = models.URLField(max_length=200)
     title = models.CharField(max_length=60, unique=True)
-    tag = models.CharField(max_length=60, null=True)
+    tag = models.CharField(max_length=60, blank=True, null=True)
     author = models.CharField(max_length=60)
     desc = models.TextField(max_length=500)
     extra = models.CharField(max_length=100)
@@ -25,7 +25,7 @@ class Book(models.Model):
 
 class BookKeyPoint(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    point = models.CharField(max_length=100)
+    point = models.CharField(max_length=200)
 
     def __str__(self):
         return f"{self.book.title} - ({self.point})"  

@@ -13,6 +13,7 @@ django-ckeditor = "*"
 django-phonenumber-field = {extras = ["phonenumberslite"], version = "*"}
 djangorestframework = "*"
 pdf2docx = "*"
+django-environ = "*"
 
 [dev-packages]
 
