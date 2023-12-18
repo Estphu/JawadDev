@@ -1,1 +1,0 @@
-web: gunicorn jawaddev.jawaddev.wsgi:application --env DJANGO_SETTINGS_MODULE=jawaddev.settings
