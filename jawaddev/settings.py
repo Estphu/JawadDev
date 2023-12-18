@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'portfolio.apps.PortfolioConfig',
     'api.apps.ApiConfig',
-    'pdftodocx.apps.PdftodocxConfig',
+    # 'pdftodocx.apps.PdftodocxConfig',
     'expensetracker.apps.ExpensetrackerConfig',
 ]
 
