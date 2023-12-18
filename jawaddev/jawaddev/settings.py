@@ -11,11 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import environ
+import os
 
 # Load environment variables from a .env file in the project root
-env = environ.Env()
-environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -71,8 +69,8 @@ CKEDITOR_CONFIGS = {
 # ANYMAIL
 
 ANYMAIL = {
-    "MAILGUN_API_KEY": env('MY_MAILGUN_API_KEY'),
-    "MAILGUN_SENDER_DOMAIN": env('MY_MAILGUN_SENDER_DOMAIN'),
+    "MAILGUN_API_KEY": os.environ.get('MY_MAILGUN_API_KEY'),
+    "MAILGUN_SENDER_DOMAIN": os.environ.get('MY_MAILGUN_SENDER_DOMAIN'),
 }
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend" 
 DEFAULT_FROM_EMAIL = 'jawad4world@gmail.com'  
@@ -116,12 +114,12 @@ WSGI_APPLICATION = 'jawaddev.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': env('DB_ENGINE'),
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
