@@ -1,1 +1,1 @@
-web: gunicorn jawaddev.wsgi --log-file -
+web: gunicorn jawaddev.jawaddev.wsgi --log-file -
