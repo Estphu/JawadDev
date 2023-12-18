@@ -15,6 +15,7 @@ djangorestframework = "*"
 pdf2docx = "*"
 django-environ = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
