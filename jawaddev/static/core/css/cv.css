@@ -1,0 +1,104 @@
+/* CV CSS */
+
+.filters,
+.cv-social,
+.cv-intro,
+.cv-main .item-content,
+.item-content,
+.cv-aside .item,
+.cv-education-list,
+.cv-insterests-list {
+    font-size: 0.875rem
+}
+
+.cv-type.active {
+    background: #7532FA;
+    color: #fff
+}
+
+.cv-type {
+    display: inline-block;
+    padding: 0.275rem 0.875rem;
+    border-top: none;
+    border-radius: 4px;
+    cursor: pointer
+}
+
+.cv-type {
+    margin-right: 2rem;
+    color: #8f8f8f;
+    font-weight: bold
+}
+
+.cv-header {
+    background: #7532FA;
+    color: rgba(255, 255, 255, 0.9);
+    height: 180px
+}
+
+body.dark-mode .cv-header {
+    background: #1e2a3a
+}
+
+.cv-header a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none
+}
+
+
+.cv-header .name {
+    font-size: 1.75rem;
+    font-weight: 700
+}
+
+.cv-header a:hover {
+    color: #fff;
+    text-decoration: underline
+}
+
+.fa-fw {
+    width: 1.28571429em;
+    text-align: center
+}
+
+.cv-social .fa-container {
+    font-size: 1rem;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 0.125rem;
+    text-align: center;
+    background: white;
+    color: #7532FA;
+    padding-top: 3px
+}
+
+.cv-section-heading {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 1.125rem;
+    letter-spacing: 0.15rem;
+    color: #1762dd;
+    border-left: 5px solid #1762dd
+}
+
+.cv-main .item-title,
+.cv-aside .item-title {
+    font-size: 1rem
+}
+
+.cv-main .item-meta {
+    font-size: 0.75rem
+}
+
+.cv-aside {
+    border-left: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+/* CV Screens */
+
+@media (max-width: 767.98px) {
+    .cv-header {
+        height: auto
+    }
+}

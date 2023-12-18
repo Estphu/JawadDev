@@ -1,0 +1,12 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}404 Page Not Found | {{ block.super }}{% endblock title %}
+
+{% block content %}
+
+    <div class="error-section text-center">
+        <img src="{% static 'core/images/404.png' %}"/>
+    </div>
+
+{% endblock content %}

@@ -6,6 +6,7 @@
 
 {% block links %}
 <link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/portfolio.css' %}">
 {% endblock links %}
 
 {% block content %}
@@ -63,7 +64,7 @@
                                         <a href="{% url 'portfolio:project_remove' pk=project.pk %}"><i class="fa fa-solid fa-trash-can"></i></a>
                                     </div>
                                 {% endif %}
-                                <!--api:post-list-->    
+                                <!--api:post-list-->  
                                 <a class="btn btn-secondary" href={{project.link}} target="_blank">
                                     <i class="fas fa-arrow-circle-right me-2" aria-hidden="true"></i>{{project.btn_title}}
                                 </a>

@@ -1,4 +1,8 @@
+import os
+from django.conf import settings
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
+from django.views import View
 from django.views.generic import TemplateView
 from django.core.mail import send_mail
 from .forms import ContactForm
@@ -19,6 +23,21 @@ class HomeView(TemplateView):
 
 class CvView(TemplateView):
     template_name = 'home/cv.html'
+
+def download_cv(request):
+    # Path to the PDF file
+    pdf_file_path = os.path.join(settings.MEDIA_ROOT, 'cv', 'JawadResume.pdf')
+
+    # Check if the file exists
+    if not os.path.exists(pdf_file_path):
+        raise FileNotFoundError("The requested resume file does not exist.")
+
+    # Open the PDF file in binary mode for reading
+    with open(pdf_file_path, 'rb') as pdf_file:
+        print(pdf_file)
+        response = HttpResponse(pdf_file.read(), content_type='application/pdf')
+        response['Content-Disposition'] = "attachment; filename=JawadResume.pdf"
+        return response
 
 class AboutView(TemplateView):
     template_name = 'home/about.html'

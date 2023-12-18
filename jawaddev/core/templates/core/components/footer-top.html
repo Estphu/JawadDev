@@ -1,6 +1,6 @@
 <div class="container footer">
     <div class="row">
-      <!-- About Footer Section -->  
+      <!-- About Footer Section -->
       <div class="col-sm-12 col-md-6">
         <h6>About</h6>
         <p class="text-justify">I am a passionate web developer.<br><br>I enjoy developing robust, scalable, and interactive websites with Django, its extended ecosystem, and third-party JavaScript libraries.</p>
@@ -9,9 +9,9 @@
       <div class="col-xs-6 col-md-3">
         <h6>Links</h6>
         <ul class="footer-links">
-          <li><a href="/"><i class="fa fa-solid fa-caret-right me-2"></i>Portfolio</a></li>
+          <li><a href="{% url 'portfolio:project_list' %}"><i class="fa fa-solid fa-caret-right me-2"></i>Portfolio</a></li>
           <li><a href="{% url 'readinglist:book_list' %}"><i class="fa fa-solid fa-caret-right me-2"></i>Reading List</a></li>
-          <li><a href="/"><i class="fa fa-solid fa-caret-right me-2"></i>CV</a></li>
+          <li><a href="{% url 'cv' %}"><i class="fa fa-solid fa-caret-right me-2"></i>CV</a></li>
           <li><a href="/"><i class="fa fa-solid fa-caret-right me-2"></i>Privacy Policy</a></li>
         </ul>
       </div>
@@ -19,9 +19,9 @@
       <div class="col-xs-6 col-md-3">
         <h6>Get in Touch</h6>
         <ul class="footer-links">
-          <li><a href="/"><i class="fa fa-solid fa-location-dot me-3"></i>Karachi, Pakistan</a></li>
-          <li><a href="/"><i class="fa fa-solid fa-mobile-button me-3"></i>+92 348 1387054</a></li>
-          <li><a href="/"><i class="fa fa-solid fa-envelope me-3"></i>Email me</a></li>
+          <li><a href="https://www.google.com/maps/place/Steel+Town+Bin+Qasim+Town,+Karachi,+Karachi+City,+Sindh/@24.8697742,67.337863,15z/data=!3m1!4b1!4m6!3m5!1s0x3eb3330937e1e513:0xe83251417ad6a299!8m2!3d24.8629847!4d67.3365242!16s%2Fm%2F05szpzn?entry=ttu" target="_blank"><i class="fa fa-solid fa-location-dot me-3"></i>Karachi, Pakistan</a></li>
+          <li><a href="https://wa.me/923481387054" target="_blank"><i class="fa fa-solid fa-mobile-button me-3"></i>+92 348 1387054</a></li>
+          <li><a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=CllgCJNqtblXxcKHbvCQFmLmqPffhxBCDLDHpKKdBHtzHXlQLHvtggnmjTvGBtqrKlnKtlTftVq" target="_blank"><i class="fa fa-solid fa-envelope me-3"></i>Email me</a></li>
           <li><a href="{% url 'contact' %}"><i class="fa fa-solid fa-paper-plane me-3"></i>Contact Form</a></li>
         </ul>
       </div>

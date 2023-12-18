@@ -1,6 +1,11 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block title %}CV | {{ block.super }}{% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'core/css/cv.css' %}">
+{% endblock links %}
 
 {% block content %}
 <div class="container px-3 px-lg-5">
@@ -30,19 +35,19 @@
                             <ul class="list-unstyled">
                                 <li class="mb-2">
                                     <i class="fa fa-solid fa-location-dot me-2 fa-fw" aria-hidden="true"></i>
-                                    <a href="" target="_blank" rel="noreferrer">
+                                    <a href="https://www.google.com/maps/place/Steel+Town+Bin+Qasim+Town,+Karachi,+Karachi+City,+Sindh/@24.8697742,67.337863,15z/data=!3m1!4b1!4m6!3m5!1s0x3eb3330937e1e513:0xe83251417ad6a299!8m2!3d24.8629847!4d67.3365242!16s%2Fm%2F05szpzn?entry=ttu" target="_blank" rel="noreferrer">
                                         Karachi, Pakistan
                                     </a>
                                 </li>
                                 <li class="mb-2">
                                     <i class="fa fa-regular fa-envelope me-2 fa-fw" aria-hidden="true"></i>
-                                    <a href="" target="_blank" rel="noreferrer">
+                                    <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=CllgCJNqtblXxcKHbvCQFmLmqPffhxBCDLDHpKKdBHtzHXlQLHvtggnmjTvGBtqrKlnKtlTftVq" target="_blank" rel="noreferrer">
                                         jawad4world@gmail.com
                                     </a>
                                 </li>
                                 <li class="mb-2">
                                     <i class="fa fa-solid fa-mobile-screen-button me-2 fa-fw" data-fa-transform="grow-6" aria-hidden="true"></i>
-                                    <a href="" target="_blank" rel="noreferrer">
+                                    <a href="https://wa.me/923481387054" target="_blank" rel="noreferrer">
                                         +92 348 1387054
                                     </a>
                                 </li>
@@ -51,28 +56,28 @@
                         <div class="seconday-info ms-md-auto mt-2">
                             <ul class="cv-social list-unstyled">
                                 <li class="mb-2">
-                                    <a href="/" target="_blank">
+                                    <a href="{% url 'home' %}" target="_blank">
                                         <span class="fa-container me-3">
                                             <i class="fa fa-solid fa-globe"></i>
                                         </span>Website
                                     </a>
                                 </li>
                                 <li class="mb-2">
-                                    <a href="/" target="_blank">
+                                    <a href="https://github.com/Estphu" target="_blank">
                                         <span class="fa-container me-3">
                                             <i class="fa fa-brands fa-github"></i>
                                         </span>GitHub
                                     </a>
                                 </li>
                                 <li class="mb-2">
-                                    <a href="/" target="_blank">
+                                    <a href="https://stackoverflow.com/users/22796684/dotech-j" target="_blank">
                                         <span class="fa-container me-3">
                                             <i class="fa fa-brands fa-stack-overflow"></i>
                                         </span>Stack Overflow
                                     </a>
                                 </li>
                                 <li class="mb-2">
-                                    <a href="/" target="_blank">
+                                    <a href="https://www.linkedin.com/in/jawad4world/" target="_blank">
                                         <span class="fa-container me-3">
                                             <i class="fa fa-brands fa-linkedin"></i>
                                         </span>LinkedIn
@@ -88,10 +93,10 @@
                 <div class="media flex-colum felx-md-row text-center">
                     <div class="media-body text-start">
                         <p class="mb-0">
-                            From the moment I developed my first Excel and Access VBA projects, I knew that I wanted to pursue a career developing software with an intuitive end user experience solving complex problems.
+                            An innovative Django Developer with extensive skills in Python building intuitive, interactive, and scalable apps. I knew that I wanted to pursue a career developing software with an intuitive end user experience solving complex problems.
                         </p>
                         <p class="mb-0 py-2">
-                            Having an extensive background in Business Intelligence, Applications Development, and ETL Projects, I enjoy developing innovative solutions for people who like things “to just work” in the way they would expect.
+                            Having an extensive background in Graphic Designing, Applications Development, and Web Projects, enjoy developing innovative solutions for people who like things “to just work” in the way they would expect.
                         </p>
                     </div>
                 </div>
@@ -104,25 +109,25 @@
                             <h3 class="text-uppercase cv-section-heading mb-4">Project / Apps</h3>
                             <div class="item mb-3">
                                 <!-- Django Blog -->
-                                {% with app_url="#" sc_url="#" pr_url="#" title="Django Blog" desc="A full CRUD application using Django’s models, views, and templates" %}
+                                {% with app_url="{{blog_url}}" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/blog" title="Django Blog" desc="A full CRUD application using Django’s models, views, and templates" %}
                                     {% include "home/widgets/cv-project-card.html" %}
                                 {% endwith %}
-                                {% with app_url="#" sc_url="#" pr_url="#" title="Django Blog REST API Endpoints" desc="API endpoints enabling front-end developers to consume with their preferred framework" %}
+                                {% with app_url="{{blog_api_url}}" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/api" title="Django Blog REST API Endpoints" desc="API endpoints enabling front-end developers to consume with their preferred framework" %}
                                     {% include "home/widgets/cv-project-card.html" %}
                                 {% endwith %}
-                                {% with app_url="#" sc_url="#" pr_url="#" title="Countdown: Letters Game" desc="Take on Susie Dent in this simulation of the letters game from Countdown" %}
+                                {% with app_url="{{pdf_to_docx_url}}" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/pdftodocx" title="Converter: PDF to DOCX" desc="A converter that converts your .pdf file into .docx files using python libraries" %}
                                     {% include "home/widgets/cv-project-card.html" %}
                                 {% endwith %}
-                                {% with app_url="#" sc_url="#" pr_url="#" title="Countdown: Numbers Game" desc="Take on Rachel Riley in this simulation of the numbers game from Countdown" %}
+                                {% with app_url="{{expense_tracker_url}}" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/expensetracker" title="Expense Tracker" desc="Expenses are Tracked for specific users" %}
                                     {% include "home/widgets/cv-project-card.html" %}
                                 {% endwith %}
-                                {% with app_url="#" sc_url="#" pr_url="#" title="Holiday Roulette" desc="Leave it to fate to decide your next luxurious holiday destination in this suspenseful game" %}
+                                {% with sc_url="https://github.com/Estphu/password-checker/blob/master/checkmypass.py" title="Password Checker" desc="Python algorithm takes password as an argument to verify whether your password in strong or not" %}
                                     {% include "home/widgets/cv-project-card.html" %}
                                 {% endwith %}
-                                {% with app_url="#" sc_url="#" pr_url="#" title="Scraping" desc="Scrape EU Referendum results or famous speeches using ‘Requests’ and ‘Beautiful Soup’" %}
+                                {% with sc_url="https://github.com/Estphu/DoTechJ_CONTACTS_API" title="Contacts API" desc="User Contacts API using JWT - JSON Web Token for secure data transmission" %}
                                     {% include "home/widgets/cv-project-card.html" %}
                                 {% endwith %}
-                                {% with app_url="#" sc_url="#" pr_url="#" title="Text Analysis" desc="Calculate the number of words and letters input/pasted by the user" %}
+                                {% with sc_url="https://github.com/Estphu/Xylophone" title="Xylophone" desc="Flutter sound application for kids to play Xylophone" %}
                                     {% include "home/widgets/cv-project-card.html" %}
                                 {% endwith %}
                             </div>
@@ -132,7 +137,7 @@
                                 Professional Development
                             </h3>
                             <div class="item-content">
-                                Enjoys a continuous programme of self-study for professional and personal development principally targeted towards skills in software engineering, web development, and data science. You can <a class="theme-link" href="{% url "readinglist:book_list" %}" target="_blank">review the programming books I have studied</a> here.
+                                Enjoys a continuous programme of self-study for professional and personal development principally targeted towards skills in software engineering, app and web development. You can <a class="theme-link" href="{% url "readinglist:book_list" %}" target="_blank">review the books I have studied</a> here.
                             </div>
                         </section>
                     </div>
@@ -147,28 +152,28 @@
                                 </h4>
                                 <ul class="list-unstyled">
                                     <li class="mb-2">
-                                        <a href="#" class="theme-link" target="_blank">Django / Django Rest</a>
+                                        <a href="/" class="theme-link" target="_blank">Django / Django Rest</a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="#" class="theme-link" target="_blank">Python</a>
+                                        <a href="/" class="theme-link" target="_blank">Python</a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="#" class="theme-link" target="_blank">PostgreSQL</a>
+                                        <a href="/" class="theme-link" target="_blank">PostgreSQL</a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="#" class="theme-link" target="_blank">HTML/CSS</a>
+                                        <a href="/" class="theme-link" target="_blank">HTML/CSS</a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="#" class="theme-link" target="_blank">Bootstrap</a>
+                                        <a href="/" class="theme-link" target="_blank">Bootstrap</a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="#" class="theme-link" target="_blank">Javascript</a>
+                                        <a href="/" class="theme-link" target="_blank">Javascript</a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="#" class="theme-link" target="_blank">Docker</a>
+                                        <a href="/" class="theme-link" target="_blank">Docker</a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="#" class="theme-link" target="_blank">Git / Github</a>
+                                        <a href="/" class="theme-link" target="_blank">Git / Github</a>
                                     </li>
                                 </ul>
                             </div>
@@ -201,6 +206,9 @@
                 </div>
             </div>
         </article>
+    </div>
+    <div class="text-center download-btn mb-5">
+        <a href="{% url 'download_cv' %}" class="btn btn-primary btn-lg shadow fs-6"><i class="fa fa-solid fa-circle-down me-3"></i>Download CV</a>
     </div>
 </div>
 {% endblock content %}

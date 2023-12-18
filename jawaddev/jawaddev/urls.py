@@ -16,13 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import handler404, handler500
+from core.views import custom_404_view, custom_500_view
 from home import views
+
+handler404 = custom_404_view
+handler500 = custom_500_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomeView.as_view(), name='home'),
     path('contact/',views.contact_me,name='contact'),
     path('cv/',views.CvView.as_view(),name='cv'),
+    path('download-cv/', views.download_cv, name='download_cv'),
     path('about/',views.AboutView.as_view(),name='about'),
     path('',include('user.urls')),
     path('reading-list/',include('readinglist.urls')),

@@ -9,16 +9,16 @@
         <p>{{ profile.bio }}</p>
         <p>
           Feel free to review the
-          <a href="{% if user.is_authenticated %}{% url "user:profile" %} {% else %} # {% endif %}" class="theme-link" target="_blank" rel="noreferrer">source code</a>, or even the
-          <a href="https://github.com/WayneLambert/portfolio/issues?q=is%3Aissue" class="theme-link" target="_blank" rel="noreferrer">project's issues on GitHub</a>.
+          <a href="https://github.com/Estphu/JawadDev" class="theme-link" target="_blank" rel="noreferrer">source code</a>, or even the
+          <a href="https://github.com/Estphu/JawadDev/issues" class="theme-link" target="_blank" rel="noreferrer">project's issues on GitHub</a>.
         </p>
       </div>
       <div class="row">
         <div class="col-md-4">
-          <a href="#" class="btn btn-primary btn-block me-2 mb-3"><i class="fa fa-briefcase mx-2" aria-hidden="true"></i>Portfolio</a>
+          <a href="{% url 'portfolio:project_list' %}" class="btn btn-primary btn-block me-2 mb-3"><i class="fa fa-briefcase mx-2" aria-hidden="true"></i>Portfolio</a>
         </div>
         <div class="col-md-4">
-          <a href="#" class="btn btn-link btn-github btn-block me-2 mb-3" target="_blank" rel="noreferrer"><i class="fa fa-brands fa-github mx-2" aria-hidden="true"></i>Code</a>
+          <a href="https://github.com/Estphu/JawadDev" class="btn btn-link btn-github btn-block me-2 mb-3" target="_blank" rel="noreferrer"><i class="fa fa-brands fa-github mx-2" aria-hidden="true"></i>Code</a>
         </div>
       </div>
     </div>
