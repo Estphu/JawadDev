@@ -20,192 +20,192 @@
         </ul>
     </div>
     <!-- Project Portfolio CV Isotope -->
-    <div class="row isotope col-12" style="position: relative; height: auto;">
-        <div class="isotope-item functional" style="position: absolute; left: 15px; top:0px">
+    <div class="row isotope col-12">
+        <div class="isotope-item functional">
             <p class="card-text text-center">
                 An overview of my portfolio projects and skills in web development/programming
             </p>
-        </div>
-        <article class="cv-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
-            <header class="cv-header pt-0">
-                <div class="media flex-column flex-md-row">
-                    <div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
-                        <div class="primary-info">
-                            <h1 class="name mt-0 mb-2 text-white">M. Jawad Bacha</h1>
-                            <ul class="list-unstyled">
-                                <li class="mb-2">
-                                    <i class="fa fa-solid fa-location-dot me-2 fa-fw" aria-hidden="true"></i>
-                                    <a href="https://www.google.com/maps/place/Steel+Town+Bin+Qasim+Town,+Karachi,+Karachi+City,+Sindh/@24.8697742,67.337863,15z/data=!3m1!4b1!4m6!3m5!1s0x3eb3330937e1e513:0xe83251417ad6a299!8m2!3d24.8629847!4d67.3365242!16s%2Fm%2F05szpzn?entry=ttu" target="_blank" rel="noreferrer">
-                                        Karachi, Pakistan
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="fa fa-regular fa-envelope me-2 fa-fw" aria-hidden="true"></i>
-                                    <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=CllgCJNqtblXxcKHbvCQFmLmqPffhxBCDLDHpKKdBHtzHXlQLHvtggnmjTvGBtqrKlnKtlTftVq" target="_blank" rel="noreferrer">
-                                        jawad4world@gmail.com
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="fa fa-solid fa-mobile-screen-button me-2 fa-fw" data-fa-transform="grow-6" aria-hidden="true"></i>
-                                    <a href="https://wa.me/923481387054" target="_blank" rel="noreferrer">
-                                        +92 348 1387054
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="seconday-info ms-md-auto mt-2">
-                            <ul class="cv-social list-unstyled">
-                                <li class="mb-2">
-                                    <a href="{% url 'home' %}" target="_blank">
-                                        <span class="fa-container me-3">
-                                            <i class="fa fa-solid fa-globe"></i>
-                                        </span>Website
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="https://github.com/Estphu" target="_blank">
-                                        <span class="fa-container me-3">
-                                            <i class="fa fa-brands fa-github"></i>
-                                        </span>GitHub
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="https://stackoverflow.com/users/22796684/dotech-j" target="_blank">
-                                        <span class="fa-container me-3">
-                                            <i class="fa fa-brands fa-stack-overflow"></i>
-                                        </span>Stack Overflow
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="https://www.linkedin.com/in/jawad4world/" target="_blank">
-                                        <span class="fa-container me-3">
-                                            <i class="fa fa-brands fa-linkedin"></i>
-                                        </span>LinkedIn
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <hr>
-            <div class="cv-intro">
-                <div class="media flex-colum felx-md-row text-center">
-                    <div class="media-body text-start">
-                        <p class="mb-0">
-                            An innovative Django Developer with extensive skills in Python building intuitive, interactive, and scalable apps. I knew that I wanted to pursue a career developing software with an intuitive end user experience solving complex problems.
-                        </p>
-                        <p class="mb-0 py-2">
-                            Having an extensive background in Graphic Designing, Applications Development, and Web Projects, enjoy developing innovative solutions for people who like things “to just work” in the way they would expect.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="cv-body">
-                <div class="row">
-                    <div class="cv-main col-12 col-lg-8 col-xl-9 pe-0 pe-lg-5">
-                        <section class="work-section">
-                            <h3 class="text-uppercase cv-section-heading mb-4">Project / Apps</h3>
-                            <div class="item mb-3">
-                                <!-- Django Blog -->
-                                {% with app_url="{{blog_url}}" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/blog" title="Django Blog" desc="A full CRUD application using Django’s models, views, and templates" %}
-                                    {% include "home/widgets/cv-project-card.html" %}
-                                {% endwith %}
-                                {% with app_url="{{blog_api_url}}" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/api" title="Django Blog REST API Endpoints" desc="API endpoints enabling front-end developers to consume with their preferred framework" %}
-                                    {% include "home/widgets/cv-project-card.html" %}
-                                {% endwith %}
-                                {% with app_url="{{pdf_to_docx_url}}" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/pdftodocx" title="Converter: PDF to DOCX" desc="A converter that converts your .pdf file into .docx files using python libraries" %}
-                                    {% include "home/widgets/cv-project-card.html" %}
-                                {% endwith %}
-                                {% with app_url="{{expense_tracker_url}}" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/expensetracker" title="Expense Tracker" desc="Expenses are Tracked for specific users" %}
-                                    {% include "home/widgets/cv-project-card.html" %}
-                                {% endwith %}
-                                {% with sc_url="https://github.com/Estphu/password-checker/blob/master/checkmypass.py" title="Password Checker" desc="Python algorithm takes password as an argument to verify whether your password in strong or not" %}
-                                    {% include "home/widgets/cv-project-card.html" %}
-                                {% endwith %}
-                                {% with sc_url="https://github.com/Estphu/DoTechJ_CONTACTS_API" title="Contacts API" desc="User Contacts API using JWT - JSON Web Token for secure data transmission" %}
-                                    {% include "home/widgets/cv-project-card.html" %}
-                                {% endwith %}
-                                {% with sc_url="https://github.com/Estphu/Xylophone" title="Xylophone" desc="Flutter sound application for kids to play Xylophone" %}
-                                    {% include "home/widgets/cv-project-card.html" %}
-                                {% endwith %}
-                            </div>
-                        </section>
-                        <section class="work-section py-3">
-                            <h3 class="item-title mt-1">
-                                Professional Development
-                            </h3>
-                            <div class="item-content">
-                                Enjoys a continuous programme of self-study for professional and personal development principally targeted towards skills in software engineering, app and web development. You can <a class="theme-link" href="{% url "readinglist:book_list" %}" target="_blank">review the books I have studied</a> here.
-                            </div>
-                        </section>
-                    </div>
-                    <aside class="cv-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
-                        <section class="skills-section-heading mb-4">
-                            <h3 class="text-uppercase cv-section-heading mb-4">
-                                Skills
-                            </h3>
-                            <div class="item">
-                                <h4 class="item-title">
-                                    Technical
-                                </h4>
+            <article class="cv-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
+                <header class="cv-header pt-0">
+                    <div class="media flex-column flex-md-row">
+                        <div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
+                            <div class="primary-info">
+                                <h1 class="name mt-0 mb-2 text-white">M. Jawad Bacha</h1>
                                 <ul class="list-unstyled">
                                     <li class="mb-2">
-                                        <a href="/" class="theme-link" target="_blank">Django / Django Rest</a>
+                                        <i class="fa fa-solid fa-location-dot me-2 fa-fw" aria-hidden="true"></i>
+                                        <a href="https://www.google.com/maps/place/Steel+Town+Bin+Qasim+Town,+Karachi,+Karachi+City,+Sindh/@24.8697742,67.337863,15z/data=!3m1!4b1!4m6!3m5!1s0x3eb3330937e1e513:0xe83251417ad6a299!8m2!3d24.8629847!4d67.3365242!16s%2Fm%2F05szpzn?entry=ttu" target="_blank" rel="noreferrer">
+                                            Karachi, Pakistan
+                                        </a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="/" class="theme-link" target="_blank">Python</a>
+                                        <i class="fa fa-regular fa-envelope me-2 fa-fw" aria-hidden="true"></i>
+                                        <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=CllgCJNqtblXxcKHbvCQFmLmqPffhxBCDLDHpKKdBHtzHXlQLHvtggnmjTvGBtqrKlnKtlTftVq" target="_blank" rel="noreferrer">
+                                            jawad4world@gmail.com
+                                        </a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="/" class="theme-link" target="_blank">PostgreSQL</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="/" class="theme-link" target="_blank">HTML/CSS</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="/" class="theme-link" target="_blank">Bootstrap</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="/" class="theme-link" target="_blank">Javascript</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="/" class="theme-link" target="_blank">Docker</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="/" class="theme-link" target="_blank">Git / Github</a>
+                                        <i class="fa fa-solid fa-mobile-screen-button me-2 fa-fw" data-fa-transform="grow-6" aria-hidden="true"></i>
+                                        <a href="https://wa.me/923481387054" target="_blank" rel="noreferrer">
+                                            +92 348 1387054
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
-                        </section>
-                        <section class="education-section py-3">
-                            <h3 class="text-uppercase cv-section-heading mb-4">
-                                Education
-                            </h3>
-                            <ul class="list-unstyled cv-education-list">
-                                <li class="mb-3">
-                                    <div class="cv-degree fw-bold">Bachelors In Computer Science</div>
-                                    <div class="cv-degree-uni text-muted">COMSATS Islamabad,</div>
-                                    <div class="cv-degree-loc text-muted">Abbotabad Campus</div>
-                                </li>
-                            </ul>
-                        </section>
-                        <section class="skills-section py-3">
-                            <h3 class="text-uppercase cv-section-heading mb-4">
-                                Interests
-                            </h3>
-                            <ul class="list-unstyled cv-insterests-list">
-                                <li class="mb-2">Travelling</li>
-                                <li class="mb-2">Chess</li>
-                                <li class="mb-2">Podcasts</li>
-                                <li class="mb-2">Debates</li>
-                                <li class="mb-2">Gaming</li>
-                            </ul>
-                        </section>
-                    </aside>
+                            <div class="seconday-info ms-md-auto mt-2">
+                                <ul class="cv-social list-unstyled">
+                                    <li class="mb-2">
+                                        <a href="{% url 'home' %}" target="_blank">
+                                            <span class="fa-container me-3">
+                                                <i class="fa fa-solid fa-globe"></i>
+                                            </span>Website
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="https://github.com/Estphu" target="_blank">
+                                            <span class="fa-container me-3">
+                                                <i class="fa fa-brands fa-github"></i>
+                                            </span>GitHub
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="https://stackoverflow.com/users/22796684/dotech-j" target="_blank">
+                                            <span class="fa-container me-3">
+                                                <i class="fa fa-brands fa-stack-overflow"></i>
+                                            </span>Stack Overflow
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="https://www.linkedin.com/in/jawad4world/" target="_blank">
+                                            <span class="fa-container me-3">
+                                                <i class="fa fa-brands fa-linkedin"></i>
+                                            </span>LinkedIn
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <hr>
+                <div class="cv-intro">
+                    <div class="media flex-colum felx-md-row text-center">
+                        <div class="media-body text-start">
+                            <p class="mb-0">
+                                An innovative Django Developer with extensive skills in Python building intuitive, interactive, and scalable apps. I knew that I wanted to pursue a career developing software with an intuitive end user experience solving complex problems.
+                            </p>
+                            <p class="mb-0 py-2">
+                                Having an extensive background in Graphic Designing, Applications Development, and Web Projects, enjoy developing innovative solutions for people who like things “to just work” in the way they would expect.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </article>
+                <hr>
+                <div class="cv-body">
+                    <div class="row">
+                        <div class="cv-main col-12 col-lg-8 col-xl-9 pe-0 pe-lg-5">
+                            <section class="work-section">
+                                <h3 class="text-uppercase cv-section-heading mb-4">Project / Apps</h3>
+                                <div class="item mb-3">
+                                    <!-- Django Blog -->
+                                    {% with app_url="https://jawaddev-production.up.railway.app/blog/" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/blog" title="Django Blog" desc="A full CRUD application using Django’s models, views, and templates" %}
+                                        {% include "home/widgets/cv-project-card.html" %}
+                                    {% endwith %}
+                                    {% with app_url="https://jawaddev-production.up.railway.app/api/blog/posts/" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/api" title="Django Blog REST API Endpoints" desc="API endpoints enabling front-end developers to consume with their preferred framework" %}
+                                        {% include "home/widgets/cv-project-card.html" %}
+                                    {% endwith %}
+                                    {% with app_url="https://jawaddev-production.up.railway.app/pdf-to-docx/" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/pdftodocx" title="Converter: PDF to DOCX" desc="A converter that converts your .pdf file into .docx files using python libraries" %}
+                                        {% include "home/widgets/cv-project-card.html" %}
+                                    {% endwith %}
+                                    {% with app_url="https://jawaddev-production.up.railway.app/expense-tracker/profile/add/" sc_url="https://github.com/Estphu/JawadDev/tree/master/jawaddev/expensetracker" title="Expense Tracker" desc="Expenses are Tracked for specific users" %}
+                                        {% include "home/widgets/cv-project-card.html" %}
+                                    {% endwith %}
+                                    {% with sc_url="https://github.com/Estphu/password-checker/blob/master/checkmypass.py" title="Password Checker" desc="Python algorithm takes password as an argument to verify whether your password in strong or not" %}
+                                        {% include "home/widgets/cv-project-card.html" %}
+                                    {% endwith %}
+                                    {% with sc_url="https://github.com/Estphu/DoTechJ_CONTACTS_API" title="Contacts API" desc="User Contacts API using JWT - JSON Web Token for secure data transmission" %}
+                                        {% include "home/widgets/cv-project-card.html" %}
+                                    {% endwith %}
+                                    {% with sc_url="https://github.com/Estphu/Xylophone" title="Xylophone" desc="Flutter sound application for kids to play Xylophone" %}
+                                        {% include "home/widgets/cv-project-card.html" %}
+                                    {% endwith %}
+                                </div>
+                            </section>
+                            <section class="work-section py-3">
+                                <h3 class="item-title mt-1">
+                                    Professional Development
+                                </h3>
+                                <div class="item-content">
+                                    Enjoys a continuous programme of self-study for professional and personal development principally targeted towards skills in software engineering, app and web development. You can <a class="theme-link" href="{% url "readinglist:book_list" %}" target="_blank">review the books I have studied</a> here.
+                                </div>
+                            </section>
+                        </div>
+                        <aside class="cv-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
+                            <section class="skills-section-heading mb-4">
+                                <h3 class="text-uppercase cv-section-heading mb-4">
+                                    Skills
+                                </h3>
+                                <div class="item">
+                                    <h4 class="item-title">
+                                        Technical
+                                    </h4>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <a href="/" class="theme-link" target="_blank">Django / Django Rest</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/" class="theme-link" target="_blank">Python</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/" class="theme-link" target="_blank">PostgreSQL</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/" class="theme-link" target="_blank">HTML/CSS</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/" class="theme-link" target="_blank">Bootstrap</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/" class="theme-link" target="_blank">Javascript</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/" class="theme-link" target="_blank">Docker</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/" class="theme-link" target="_blank">Git / Github</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="education-section py-3">
+                                <h3 class="text-uppercase cv-section-heading mb-4">
+                                    Education
+                                </h3>
+                                <ul class="list-unstyled cv-education-list">
+                                    <li class="mb-3">
+                                        <div class="cv-degree fw-bold">Bachelors In Computer Science</div>
+                                        <div class="cv-degree-uni text-muted">COMSATS Islamabad,</div>
+                                        <div class="cv-degree-loc text-muted">Abbotabad Campus</div>
+                                    </li>
+                                </ul>
+                            </section>
+                            <section class="skills-section py-3">
+                                <h3 class="text-uppercase cv-section-heading mb-4">
+                                    Interests
+                                </h3>
+                                <ul class="list-unstyled cv-insterests-list">
+                                    <li class="mb-2">Travelling</li>
+                                    <li class="mb-2">Chess</li>
+                                    <li class="mb-2">Podcasts</li>
+                                    <li class="mb-2">Debates</li>
+                                    <li class="mb-2">Gaming</li>
+                                </ul>
+                            </section>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+        </div>
     </div>
     <div class="text-center download-btn mb-5">
         <a href="{% url 'download_cv' %}" class="btn btn-primary btn-lg shadow fs-6"><i class="fa fa-solid fa-circle-down me-3"></i>Download CV</a>
