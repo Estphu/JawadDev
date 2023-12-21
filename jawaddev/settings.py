@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'django.contrib.humanize',
     'anymail',
@@ -75,7 +76,6 @@ CKEDITOR_CONFIGS = {
 }
 
 # ANYMAIL
-
 ANYMAIL = {
     "MAILGUN_API_KEY": os.environ.get('MY_MAILGUN_API_KEY'),
     "MAILGUN_SENDER_DOMAIN": os.environ.get('MY_MAILGUN_SENDER_DOMAIN'),
@@ -87,12 +87,18 @@ SERVER_EMAIL = 'jawad4world@gmail.com'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+]
+
+# Allowed origins for CORS-HEADER
+CORS_ALLOWED_ORIGINS = [
+    "https://jawaddev-production.up.railway.app/",
 ]
 
 ROOT_URLCONF = 'jawaddev.urls'
@@ -180,19 +186,23 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'static'
 
+# Configuring Django-Storages
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_QUERYSTRING_AUTH = False
+AWS_IS_GZIPPED = True
+
+# Configuring BackBlaze for Media
+
+AWS_ACCESS_KEY_ID = os.environ.get('BACKBLAZE_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('BACKBLAZE_APPLICATION_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('BACKBLAZE_STORAGE_BUCKET_NAME')
+AWS_S3_ENDPOINT_URL = 'https://s3.us-east-005.backblazeb2.com '
+AWS_S3_REGION_NAME = 'us-east-005'
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# USERNAME: me
-# PASSWORD: Y#SthisisM3
-
-# profile:
-
-# USERNAME: Jawad
-# FIRST NAME: M. Jawad
-# LAST NAME: Bacha
-# EMAIL: jawad4world@gmail.com
-# PASSWORD: j@W@dATH!ZP0RTF0LI0
 

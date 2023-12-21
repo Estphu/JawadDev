@@ -118,7 +118,7 @@ svg {
 .social-list a {
     width: 32px;
     height: 32px;
-    padding-top: 5px;
+    padding-top: 3px;
     display: inline-block;
     text-align: center;
     border-radius: 50%;
@@ -294,7 +294,6 @@ input[type="checkbox"] {
     width: 44px;
     height: 44px;
     text-align: center;
-    padding-top: 10px;
     margin-right: 8px;
     border-radius: 100%;
     -webkit-transition: all .2s linear;
