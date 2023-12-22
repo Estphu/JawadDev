@@ -16,8 +16,10 @@ pdf2docx = "*"
 django-environ = "*"
 gunicorn = "*"
 whitenoise = "*"
-django-storages = {extras = ["boto3"], version = "*"}
 django-cors-headers = "*"
+b2 = "*"
+django-storages = "*"
+django-backblazeb2-storage = "*"
 
 [dev-packages]
 
