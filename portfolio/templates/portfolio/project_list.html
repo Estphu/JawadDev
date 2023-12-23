@@ -42,7 +42,7 @@
         {% if projects %}
             <div class="isotope project-cards row">
                 {% for project in projects %}
-                    <div class="isotope-item col-md-6 mb-5 {{project.categories.title}}">
+                    <div class="isotope-item col-md-6 mb-5 {{project.categories.title|lower}}">
                         <div class="card project-card">
                         <div class="row g-0">
                             <div class="col-lg-4 card-img-holder">
