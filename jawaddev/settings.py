@@ -36,7 +36,7 @@ DEBUG = False
 
 # jawaddev-production.up.railway.app
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['jawaddev-production.up.railway.app']
 
 # Application definition
 
@@ -78,8 +78,8 @@ CKEDITOR_CONFIGS = {
 
 # ANYMAIL
 ANYMAIL = {
-    "MAILGUN_API_KEY": env('MY_MAILGUN_API_KEY'),
-    "MAILGUN_SENDER_DOMAIN": env('MY_MAILGUN_SENDER_DOMAIN'),
+    "MAILGUN_API_KEY": os.environ.get('MY_MAILGUN_API_KEY'),
+    "MAILGUN_SENDER_DOMAIN": os.environ.get('MY_MAILGUN_SENDER_DOMAIN'),
 }
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend" 
 DEFAULT_FROM_EMAIL = 'jawad4world@gmail.com'  
@@ -134,11 +134,11 @@ WSGI_APPLICATION = 'jawaddev.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
@@ -182,9 +182,9 @@ STORAGES = {
     }
 }
 
-AWS_ACCESS_KEY_ID = env('BACKBLAZE_KEY_ID')
-AWS_SECRET_ACCESS_KEY = env('BACKBLAZE_APPLICATION_KEY')
-AWS_STORAGE_BUCKET_NAME = env('BACKBLAZE_STORAGE_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = os.environ.get('BACKBLAZE_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('BACKBLAZE_APPLICATION_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('BACKBLAZE_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = 'us-east-005'
 AWS_S3_ENDPOINT = f's3.{AWS_S3_REGION_NAME}.backblazeb2.com'
 AWS_S3_ENDPOINT_URL = f'https://{AWS_S3_ENDPOINT}'
