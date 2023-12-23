@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
-    # 'corsheaders',
+    'corsheaders',
     'rest_framework',
     'django.contrib.humanize',
     'anymail',
@@ -97,10 +97,11 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://jawaddev-production.up.railway.app']
+
 # Allowed origins for CORS-HEADER
 CORS_ALLOWED_ORIGINS = [
     "https://jawaddev-production.up.railway.app",
-    "http://127.0.0.1:8000",
 ]
 
 ROOT_URLCONF = 'jawaddev.urls'

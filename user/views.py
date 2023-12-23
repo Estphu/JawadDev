@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView
-from django.views import View
+from django.http import Http404
 from .forms import UserRegisterForm, UpdateProfileForm
 from django.contrib.auth.decorators import login_required
 
@@ -12,8 +12,12 @@ class UserRegisterView(CreateView):
     success_url = reverse_lazy('user:login')
     template_name = 'user/register.html'
 
+    def post(self, request, *args, **kwargs):
+        return Http404()
+
     def get_success_url(self):
         return reverse('user:profile', kwargs={'profile_slug': self.slug})
+    
     
 @login_required
 def profile(request):
