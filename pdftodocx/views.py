@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
-from django.core.files.storage import FileSystemStorage
+from django.core.files.storage import FileSystemStorage, default_storage
+from storages.backends.s3boto3 import S3Boto3Storage
 from docx import Document
 from pdf2docx import parse
 
@@ -20,7 +21,7 @@ class pdftodocx(View):
     
     def post(self, request):
         selectedFile = request.FILES['selectedFile']
-        fs = FileSystemStorage(location="media/pdftodocx/pdf/")
+        fs = S3Boto3Storage(location="media/pdftodocx/pdf/")
         fs.save(selectedFile.name, selectedFile)
         print(selectedFile)
         docs_path = 'media/pdftodocx/word/SampleDocx.docx'
