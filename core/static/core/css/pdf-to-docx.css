@@ -1,3 +1,7 @@
+body {
+    min-height: 100vh;
+}
+
 .custom-file-btn input[type=file]::-webkit-file-upload-button {
     display: none
 }

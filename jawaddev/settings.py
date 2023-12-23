@@ -32,7 +32,7 @@ environ.Env.read_env(BASE_DIR / '.env')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+DEBUG = False
 
 # jawaddev-production.up.railway.app
 
@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'portfolio.apps.PortfolioConfig',
     'api.apps.ApiConfig',
-    # 'pdftodocx.apps.PdftodocxConfig',
+    'pdftodocx.apps.PdftodocxConfig',
     'expensetracker.apps.ExpensetrackerConfig',
 ]
 
