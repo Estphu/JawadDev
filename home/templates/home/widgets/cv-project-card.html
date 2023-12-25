@@ -9,7 +9,7 @@
         Source Code
     </a>
     {% if pr_url %} |
-    <a href={{ pr_url }} class="theme-link" target="_blank">Project Review</a>
+    <a href="{% url 'portfolio:review_detail' slug=pr_url %}" class="theme-link" target="_blank">Project Review</a>
     {% endif %}
     </div>
 </div>

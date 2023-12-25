@@ -23,10 +23,10 @@ class Profile(models.Model):
         self.slug = slugify(self.user.get_username())
         super().save(*args, **kwargs)  
 
-        img = Image.open(self.avatar.path) # Open image
+        # img = Image.open(self.avatar.path) # Open image
 
-        # resize image
-        if img.height > 500 or img.width > 500:
-            output_size = (500, 500)
-            img.thumbnail(output_size) # Resize image
-            img.save(self.avatar.path) # Save it again and override the larger image
+        # # resize image
+        # if img.height > 500 or img.width > 500:
+        #     output_size = (500, 500)
+        #     img.thumbnail(output_size) # Resize image
+        #     img.save(self.avatar.path) # Save it again and override the larger image

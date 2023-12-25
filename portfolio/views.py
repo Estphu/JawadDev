@@ -1,10 +1,10 @@
 from typing import Any
 from django.db import models
 from django.shortcuts import render
-from django.views.generic  import CreateView, ListView, UpdateView, DeleteView
+from django.views.generic  import CreateView, ListView, UpdateView, DeleteView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from .models import Project
+from .models import Project, ProjectReview
 
 # Create your views here.
 class ProjectListView(ListView):
@@ -52,3 +52,9 @@ class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     #         return Project.objects.filter(categories=category)
 
     #     return Project.objects.all()
+
+class ProjectReview(DetailView):
+    model = ProjectReview
+    template_name = 'portfolio/project_review.html'
+    context_object_name = 'project_review'
+    slug_url_kwarg = 'slug'

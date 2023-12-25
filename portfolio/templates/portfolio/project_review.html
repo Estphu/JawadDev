@@ -1,0 +1,150 @@
+{% extends "core/base.html" %}
+
+{% block title %}{{project_review.title}} Review | {{block.super}}{% endblock title %}
+
+{% block content %}
+<!-- Title & Subtitle Section -->
+<section class="cta-section theme-bg-light py-5">
+    <div class="container single-col-max-width">
+        <h2 class="heading text-center">Project Review: {{project_review.title}}</h2>
+    </div>
+    <div class="project-intro text-center">
+        <p class="mb-0 lead">{{project_review.sub_title}}</p>
+    </div>
+</section>
+<!-- Project Summary Section -->
+<section class="project px-3 py-5 p-md-5">
+    <div class="container">
+      <div class="project-meta media d-md-flex flex-column flex-md-row p-4 theme-bg-light">
+        <img class="project-thumb mb-3 mb-md-0 me-md-5 rounded d-none d-md-inline-block" src="{{project_review.project.thumbnail.url}}" alt="jawaddev Blog" width="300px" height="400">
+        <div class="media-body">
+          <div class="client-info">
+            <h5 class="fw-bold mb-4">Summary</h5>
+            <ul class="client-meta list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-tag fa-fw me-2" aria-hidden="true"></i>
+                <strong>Type:</strong> {{project_review.type}}
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-link fa-fw me-2" aria-hidden="true"></i>
+                <strong>Web:</strong>
+                <a href="{{project_review.web_url}}" class="theme-link" target="_blank">{{project_review.web_name}}</a>
+              </li>
+              <li class="mb-2">
+                <i class="fa fa-github fa-fw me-2" aria-hidden="true"></i>
+                <strong>GitHub:</strong>
+                <a href="{{project_review.github_url}}" class="theme-link" target="_blank" rel="noreferrer">
+                  Source Code
+                </a>
+              </li>
+              <!-- <li class="mb-2">
+                <i class="fa fa-exclamation-circle fa-fw me-2" aria-hidden="true"></i>
+                <strong>Issues:</strong>
+                <a href="https://github.com/WayneLambert/portfolio/issues?q=is%3Aissue+label%3A%22app%3A+blog%22" class="theme-link" target="_blank" rel="noreferrer">
+                  Open &amp; Closed Issues on GitHub
+                </a>
+              </li> -->
+            </ul>
+            <hr>
+            <h5 class="fw-bold mb-4">Introduction</h5>
+            <div class="client-bio mb-4">
+              {{project_review.formatted_introduction|safe}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Feature Section -->
+    <section class="project px-3 pb-5">
+        <div class="container">
+            <h3 class="section-title fw-bold mb-2" id="features">Features</h3>
+            <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+                <ul class="mb-0 list-unstyled">
+                {% for review_feature in project_review.reviewfeature_set.all %}
+                  <li class="mb-2"><i class="fas fa-check fa-fw me-2" aria-hidden="true"></i>
+                    {{review_feature.text}}
+                  </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Project Write Up Section -->
+    <section class="project px-3">
+        <div class="container">
+            <div class="project-sections">
+                <!-- Project Objectives -->
+                <div class="project-section mb-5">
+                    <h3 class="section-title fw-bold mb-2" id="objectives">Objectives</h3>
+                      {{project_review.formatted_objectives|safe}}
+                </div>
+            
+                <!-- Project Approach / Solution -->
+                <div class="project-section mb-5">
+                  <h3 class="section-title fw-bold mb-2" id="approach-and-solution">The Approach &amp; Solution</h3>
+                  {{project_review.formatted_approach|safe}}
+                </div>
+            
+                <!-- Project Evaluation -->
+                <div class="project-section mb-5">
+                  <h3 class="section-title fw-bold mb-2" id="evaluation">Evaluation</h3>
+                  {{project_review.formatted_evaluation|safe}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Languages, Technologies And Skills Used Section -->
+    <section class="project px-3 pb-5">
+        <div class="container">
+          <h3 class="section-title fw-bold mb-2" id="technologies">
+            Languages, Technologies &amp; Skills Used
+          </h3>
+          <div class="text-small text-muted mb-1">In approximate order of frequency used...</div>
+          <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+            <table>
+              <tbody><tr>
+                <td class="text-right fw-bold pe-2">Languages:</td>
+                <td>
+                  {% for language in project_review.languages.all %}
+                    {{ language.title}}{% if not loop.last %}, {% endif %}
+                  {% endfor %}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right fw-bold pe-2">Frameworks / Services:</td>
+                <td>
+                  {% for framework in project_review.frameworks.all %}
+                    {{framework.title}}{% if not loop.last %}, {% endif %}
+                  {% endfor %}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right fw-bold pe-2">Software:</td>
+                <td>
+                  {% for software in project_review.softwares.all %}
+                    {{software.title}}{% if not loop.last %}, {% endif %}
+                  {% endfor %}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right fw-bold pe-2">Infrastructure:</td>
+                <td>
+                  {% for infrastructure in project_review.infrastructures.all %}
+                    {{infrastructure.title}}{% if not loop.last %}, {% endif %}
+                  {% endfor %}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right fw-bold pe-2">Notable Packages:</td>
+                <td>
+                  {% for package in project_review.packages.all %}
+                    {{package.title}}{% if not loop.last %}, {% endif %}
+                  {% endfor %}
+                </td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+    </section>
+{% endblock content %}
