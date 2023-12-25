@@ -11,20 +11,20 @@ The code is not intended to be cloned for reproduction as it's a representation 
 
 A full CRUD application using Django's models, views, and templates.
 
-[-Blog Home Page](https://jawaddev-production.up.railway.app/blog/)
-[-Project Review](https://jawaddev-production.up.railway.app/portfolio/review/django-blog/)
+-[Blog Home Page](https://jawaddev-production.up.railway.app/blog/)
+-[Project Review](https://jawaddev-production.up.railway.app/portfolio/review/django-blog/)
 
 ## Django Blog REST API Endpoints
 
 API endpoints enabling front-end developers to consume with their preferred framework
 
-+[API Endpoints](https://jawaddev-production.up.railway.app/api/blog/posts/)
+-[API Endpoints](https://jawaddev-production.up.railway.app/api/blog/posts/)
 
 ## Expense Tracker
 
 Expenses are Tracked for specified users
 
-+[Expense Tracker](https://jawaddev-production.up.railway.app/expense-tracker/profile/add/)
+-[Expense Tracker](https://jawaddev-production.up.railway.app/expense-tracker/profile/add/)
 
 ## Contact Me
 
