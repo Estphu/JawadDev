@@ -1,4 +1,4 @@
-![dotechj_linkedin_cover](https://github.com/Estphu/JawadDev/assets7762579127426a19-4c3c-45d8-a00a-242a59b7cde3)
+![dotechj_linkedin_cover](https://github.com/Estphu/JawadDev/assets/77625791/e7e43b1a-ee4b-4855-bd62-1a5d7af139df)
 
 # Django Portfolio
 
