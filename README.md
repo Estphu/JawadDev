@@ -11,8 +11,8 @@ The code is not intended to be cloned for reproduction as it's a representation 
 
 A full CRUD application using Django's models, views, and templates.
 
-+[Blog Home Page](https://jawaddev-production.up.railway.app/blog/)
-+[Project Review](https://jawaddev-production.up.railway.app/portfolio/review/django-blog/)
+[-Blog Home Page](https://jawaddev-production.up.railway.app/blog/)
+[-Project Review](https://jawaddev-production.up.railway.app/portfolio/review/django-blog/)
 
 ## Django Blog REST API Endpoints
 
