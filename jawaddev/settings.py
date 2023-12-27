@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
     'api.apps.ApiConfig',
     # 'pdftodocx.apps.PdftodocxConfig',
+    'bakepicker.apps.BakepickerConfig',
     'expensetracker.apps.ExpensetrackerConfig',
 ]
 

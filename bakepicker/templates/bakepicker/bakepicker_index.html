@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Bake Picker | {{block.super}}{% endblock title %}
+
+{% block content %}
+<section class="cta-section theme-bg-light py-5">
+    <div class="project-intro text-center">
+        <img class="rounded" src="{% static 'bakepicker/images/j_bakers.png' %}" alt="J_Bakers" height="400" width="300">
+    </div>
+</section>
+<section class="project px-3 py-5 p-md-5">
+    <div class="container">
+      <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+        <div class="media-body text-center">
+          <!-- Instructions -->
+          <div class="d-flex flex-column col-12 mb-3 mt-3">
+            <div>Click the button below to find out what cake you're baking today!</div>
+          </div>
+          <!-- Button -->
+          <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-sm btn-success mt-3">
+              <i class="fa fa-solid fa-cake-candles me-2" aria-hidden="true"></i>
+              Find Cake & Recipe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

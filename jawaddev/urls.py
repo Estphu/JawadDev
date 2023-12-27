@@ -39,6 +39,7 @@ urlpatterns = [
     path('blog/',include('blog.urls')),
     path('api/',include('api.urls', namespace='api')),
     # path('pdf-to-docx/',include('pdftodocx.urls')),
+    path('bake-picker/',include('bakepicker.urls')),
     path('expense-tracker/profile/',include('expensetracker.urls'))
 ]
 

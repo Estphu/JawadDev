@@ -1,0 +1,96 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Cake & Recipe | {{block.super}}{% endblock title %}
+
+{% block links %}
+<style>
+    .log-container {
+        display: none;
+    }
+</style>
+{% endblock links %}
+
+
+{% block content %}
+    <section class="cta-section theme-bg-light py-3 mb-3">
+        <div class="project-intro text-center">
+            <h2 class="mb-2">J Bakers Selected: {{cake.name}}</h2>
+            <img src={{cake.img_url}} alt="Cake" width="300px">
+        </div>
+    </section>
+    <!-- Ingredients -->
+    <section class="project px-3 pb-5">
+        <div class="container">
+            <h3 class="section-title fw-bold mb-2" id="features">Ingredients</h3>
+            <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+                <ul class="mb-0 list-unstyled">
+                    {% for ingredient in recipe %}
+                        <li class="mb-2"><i class="fas fa-check fa-fw me-2" aria-hidden="true"></i>
+                            {{ingredient.step}}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Instructions -->
+    <section class="project px-3 pb-5">
+        <div class="container">
+            <h3 class="section-title fw-bold mb-2" id="features">Instructions</h3>
+            <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+                <ol class="mb-0">
+                    {% for instruct in recipe %}
+                        {% if instruct.instruction %}
+                            <li class="mb-2">
+                                {{instruct.instruction}}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="project px-3 pb-5">
+        <div class="container">
+            <h3 class="section-title fw-bold mb-2" id="features">Selection</h3>
+            <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+                <p><strong>J Bakers selection result were:</strong></p>
+                <ul class="mb-0 list-unstyled">
+                    {% for result in results %}
+                        {% if max_num in result %}
+                            <li style="background-color: #7534FA; color: white">{{result}}</li>
+                        {% else %}
+                        <li>{{result}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <div class="pt-3">
+                    <p><strong>Detailed logging of the choices can be viewed here:</strong></p>
+                    <a class="theme-link" id="toggleLogContainer" href="javascript:void(0);">Show Log File</a>
+                </div>
+                <div class="log-container px-lg-5">
+                    <article class="cv-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
+                        <div class="log-file-content">
+                            <ul class="list-unstyled">
+                                {% for log in logs %}
+                                    <li>{{log}}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block scriptlinks %}
+<script>
+    $(document).ready(function() {
+        $('#toggleLogContainer').on('click', function() {
+            $('.log-container').toggle();
+        });
+    });
+</script>
+{% endblock scriptlinks %}
