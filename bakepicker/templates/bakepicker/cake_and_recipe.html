@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
 {% load static %}
 
-{% block title %}Cake & Recipe | {{block.super}}{% endblock title %}
+{% block title %}{{cake.name}} & Recipe | {{block.super}}{% endblock title %}
 
 {% block links %}
 <style>
@@ -17,6 +17,14 @@
         <div class="project-intro text-center">
             <h2 class="mb-2">J Bakers Selected: {{cake.name}}</h2>
             <img src={{cake.img_url}} alt="Cake" width="300px">
+            
+            <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-sm btn-success mt-3">
+              <i class="fa fa-solid fa-rotate-right me-2" aria-hidden="true"></i>
+              Try Again
+            </button>
+        </form>
         </div>
     </section>
     <!-- Ingredients -->
@@ -65,13 +73,25 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
-                <div class="pt-3">
-                    <p><strong>Detailed logging of the choices can be viewed here:</strong></p>
-                    <a class="theme-link" id="toggleLogContainer" href="javascript:void(0);">Show Log File</a>
+                <div class="pt-3 row">
+                    <div class="col-6">
+                        <p><strong>Detailed logging of the choices can be viewed here:</strong></p>
+                        <a class="theme-link" id="toggleLogContainer" href="javascript:void(0);">Show Log File</a>
+                    </div>
+                    <div class="col-6 text-end">
+                        <p><strong>Content Reference:</strong></p>
+                        <a class="theme-link" href="https://iambaker.net/" target="_blank">I am Baker</a>
+                    </div>
                 </div>
                 <div class="log-container px-lg-5">
                     <article class="cv-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
                         <div class="log-file-content">
+                            <div class="text-center">
+                                <div class="text-small mb-2">
+                                    <strong>Note:</strong> Times are in UTC time zone.
+                                  </div>
+                                <a href="https://github.com/Estphu/JawadDev/tree/master/bakepicker" class="btn btn-dark btn-sm me-2 mb-3" target="_blank" rel="noreferrer"><i class="fa fa-brands fa-github mx-2" aria-hidden="true"></i>View Code</a>
+                              </div>
                             <ul class="list-unstyled">
                                 {% for log in logs %}
                                     <li>{{log}}</li>

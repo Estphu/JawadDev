@@ -35,6 +35,4 @@ def get_random_cake_instance():
 
     random_cake_instance = Cake.objects.get(name=selected_cake)
 
-    print(selected_cake)
-
     return random_cake_instance, result, str(max(counts.values())), logs

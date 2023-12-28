@@ -14,7 +14,8 @@ def cake_and_recipe(request):
     random_cake_instance, result, max_num, logs = get_random_cake_instance()
     related_recipe_instance = Recipe.objects.filter(cake=random_cake_instance)
 
-    print(random_cake_instance.name)
+    if request.method=="POST":
+        return redirect('bakepicker:cake_and_recipe')
 
     context = {
         'cake': random_cake_instance,
