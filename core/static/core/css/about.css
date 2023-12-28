@@ -1,9 +1,11 @@
 /* ABOUT CSS */
 
-.btn-link {
+.accordion-item .btn-link {
     color: #292929;
     text-decoration: none;
-    text-align: start
+    text-align: start;
+    height: fit-content;
+    white-space: normal
 }
 
 /* ABOUT DARK-MODE */
