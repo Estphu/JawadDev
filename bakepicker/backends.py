@@ -3,6 +3,7 @@ from random import choice
 import time
 from .models import Cake
 import logging
+from collections import Counter
 
 # Configure logging
 logging.basicConfig(
@@ -25,13 +26,15 @@ def get_random_cake_instance():
         logs.append(f'{time.asctime()} - {os.path.basename(__file__)} - J Bakers Chose: {chosen_cake}')
         counts[chosen_cake] += 1
 
-    selected_cake = max(counts.keys())
-
     result = []
 
     for cake, count in counts.items():
         result.append(f'{cake} was selected: {count} times')
+        if count == max(counts.values()):
+            selected_cake = cake
 
     random_cake_instance = Cake.objects.get(name=selected_cake)
+
+    print(selected_cake)
 
     return random_cake_instance, result, str(max(counts.values())), logs
