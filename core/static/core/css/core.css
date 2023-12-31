@@ -40,7 +40,8 @@ body {
 
 .btn-block {
     display: block;
-    width: 100%
+    width: 100%;
+    height: auto
 }
 
 .theme-bg-light {
@@ -404,7 +405,7 @@ h6 {
 
 @media only screen and (max-width: 992px) {
     .header {
-        background-color: #7532FA
+        background: #7532FA;
     }
 
     .main-wrapper .auth-wrapper {
