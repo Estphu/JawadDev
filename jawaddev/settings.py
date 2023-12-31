@@ -175,24 +175,24 @@ USE_I18N = True
 
 USE_TZ = True
 
-# STORAGES = {
-#     "default": {
-#         "BACKEND": "storages.backends.s3boto3.S3Boto3Storage"
-#     },
-#     "staticfiles": {
-#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"
-#     }
-# }
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage"
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    }
+}
 
-# AWS_ACCESS_KEY_ID = os.environ.get('BACKBLAZE_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = os.environ.get('BACKBLAZE_APPLICATION_KEY')
-# AWS_STORAGE_BUCKET_NAME = os.environ.get('BACKBLAZE_STORAGE_BUCKET_NAME')
-# AWS_S3_REGION_NAME = 'us-east-005'
-# AWS_S3_ENDPOINT = f's3.{AWS_S3_REGION_NAME}.backblazeb2.com'
-# AWS_S3_ENDPOINT_URL = f'https://{AWS_S3_ENDPOINT}'
-# AWS_DEFAULT_ACL = 'public-read'
+AWS_ACCESS_KEY_ID = os.environ.get('BACKBLAZE_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('BACKBLAZE_APPLICATION_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('BACKBLAZE_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = 'us-east-005'
+AWS_S3_ENDPOINT = f's3.{AWS_S3_REGION_NAME}.backblazeb2.com'
+AWS_S3_ENDPOINT_URL = f'https://{AWS_S3_ENDPOINT}'
+AWS_DEFAULT_ACL = 'public-read'
 
-# AWS_LOCATION = 'media/'
+AWS_LOCATION = 'media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
