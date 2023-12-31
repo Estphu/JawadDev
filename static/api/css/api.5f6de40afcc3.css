@@ -1,0 +1,8 @@
+.navbar {
+    background: #7532fa;
+    border: none 
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffdccf !important;
+}

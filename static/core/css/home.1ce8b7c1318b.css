@@ -1,0 +1,155 @@
+/* HOME CSS */
+
+.profile-teaser .name {
+    font-size: 50px
+}
+
+.media {
+    display: flex;
+    align-items: flex-start
+}
+
+.media-body {
+    flex: 1
+}
+
+.profile-teaser .profile-image {
+    max-width: 400px
+}
+
+.btn-github {
+    background-color: #292E35;
+    color: #fff;
+    text-decoration: none
+}
+
+.btn-github:hover {
+    background-color: #131518;
+    color: #fff;
+    text-decoration: none
+}
+
+.project-card {
+    border-radius: 0;
+    background: #fafafa;
+    border: none;
+    position: relative;
+    height: 100%
+}
+
+.project-card:hover .link-mask {
+    visibility: visible;
+    background: rgba(117, 50, 250, 0.4)
+}
+
+.project-card:hover .link-mask-text {
+    display: block
+}
+
+.project-card .card-img-holder {
+    max-height: 200px;
+    overflow: hidden;
+    vertical-align: middle
+}
+
+.project-card .card-img {
+    border-radius: 0
+}
+
+.project-card .card-title {
+    font-size: 1.125rem
+}
+
+.project-card .card-text {
+    font-size: 0.875rem;
+    color: #4f4f4f
+}
+
+.project-card .link-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out
+}
+
+.project-card .link-mask .link-mask-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block
+}
+
+.project-card .link-mask-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    color: #fff;
+    display: none
+}
+
+.project-card .link-mask-text .btn {
+    top: 50%;
+    margin-top: -20px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.9);
+    border: none
+}
+
+.skills-section .item:hover {
+    transition: .5s
+}
+
+.skills-section .item:hover {
+    transform: scale(1.1)
+}
+
+.skills-section .item-title {
+    font-size: 1rem
+}
+
+.blog-post-card {
+    background: #fafafa;
+    border: 1px solid rgba(0, 0, 0, 0.025);
+    height: 100%;
+    border-radius: 0
+}
+
+.card-img,
+.card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px)
+}
+
+ul.no-bullets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+/* Home Screens */
+
+@media (min-width: 1200px) {
+    .profile-teaser .profile-image {
+        max-width: 400px
+    }
+}
+
+@media (min-width: 992px) {
+    .profile-teaser .profile-image {
+        max-width: 250px
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card .link-mask {
+        transition: none
+    }
+}
