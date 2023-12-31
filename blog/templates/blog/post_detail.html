@@ -28,7 +28,7 @@
               <ul class="list-unstyled">
                 <!-- Author Name or Username -->
                 <li>
-                  <a class="theme-link" href="#">
+                  <a class="theme-link" href="{% url 'home' %}">
                     <strong>{{post.author.first_name}} {{post.author.last_name}}</strong>
                   </a>
                 </li>
@@ -48,9 +48,11 @@
                   <small class="text-muted">
                     <strong>Categories:</strong>
                       {% for category in post.categories.all %}
-                        <a class="theme-link" href="#">
-                          {{category.title}}
-                        </a>
+                        <a class="theme-link" href="/">
+                          {{category.title}}</a>
+                          {% if not forloop.last %}
+                            <span>|</span>
+                          {% endif %}
                       {% endfor %}
                   </small>
                 </li>

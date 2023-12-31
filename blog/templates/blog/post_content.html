@@ -20,7 +20,7 @@
     {% if query %}
     Search results for "{{query}}"
     {% else %}
-    1 post covering 1 category
+    2 posts covering 2 categories
     {% endif %}
 </h6>
     {% if posts %}
@@ -38,7 +38,7 @@
                             <ul class="list-unstyled">
                                 <!-- Author Name or Username -->
                                 <li>
-                                <a class="theme-link" href="#">
+                                <a class="theme-link" href="/">
                                     <strong>{{post.author.first_name}} {{post.author.last_name}}</strong>
                                 </a>
                                 </li>
@@ -58,9 +58,12 @@
                                 <small class="text-muted">
                                     <strong>Categories:</strong>
                                     {% for category in post.categories.all %}
-                                        <a class="theme-link" href="#">
+                                        <a class="theme-link" href="/">
                                         {{category.title}}
                                         </a>
+                                        {% if not forloop.last %}
+                                            <span>|</span>
+                                        {% endif %}
                                     {% endfor %}
                                 </small>
                                 </li>

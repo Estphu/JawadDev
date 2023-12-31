@@ -107,7 +107,7 @@
                 <td class="text-right fw-bold pe-2">Languages:</td>
                 <td>
                   {% for language in project_review.languages.all %}
-                    {{ language.title}}{% if not loop.last %}, {% endif %}
+                    {{ language.title}}{% if not forloop.last %}, {% endif %}
                   {% endfor %}
                 </td>
               </tr>
@@ -115,7 +115,7 @@
                 <td class="text-right fw-bold pe-2">Frameworks / Services:</td>
                 <td>
                   {% for framework in project_review.frameworks.all %}
-                    {{framework.title}}{% if not loop.last %}, {% endif %}
+                    {{framework.title}}{% if not forloop.last %}, {% endif %}
                   {% endfor %}
                 </td>
               </tr>
@@ -123,7 +123,7 @@
                 <td class="text-right fw-bold pe-2">Software:</td>
                 <td>
                   {% for software in project_review.softwares.all %}
-                    {{software.title}}{% if not loop.last %}, {% endif %}
+                    {{software.title}}{% if not forloop.last %}, {% endif %}
                   {% endfor %}
                 </td>
               </tr>
@@ -131,7 +131,7 @@
                 <td class="text-right fw-bold pe-2">Infrastructure:</td>
                 <td>
                   {% for infrastructure in project_review.infrastructures.all %}
-                    {{infrastructure.title}}{% if not loop.last %}, {% endif %}
+                    {{infrastructure.title}}{% if not forloop.last %}, {% endif %}
                   {% endfor %}
                 </td>
               </tr>
@@ -139,7 +139,7 @@
                 <td class="text-right fw-bold pe-2">Notable Packages:</td>
                 <td>
                   {% for package in project_review.packages.all %}
-                    {{package.title}}{% if not loop.last %}, {% endif %}
+                    {{package.title}}{% if not forloop.last %}, {% endif %}
                   {% endfor %}
                 </td>
               </tr>
