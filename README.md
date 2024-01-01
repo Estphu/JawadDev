@@ -1,4 +1,4 @@
-![dotechj_linkedin_cover](https://github.com/Estphu/JawadDev/assets/77625791/e7e43b1a-ee4b-4855-bd62-1a5d7af139df)
+![Artboard 1](https://github.com/Estphu/JawadDev/assets/77625791/cf256300-fd98-4245-b7e0-490751ca10f3)
 # Django Portfolio
 
 This is the code for my portfolio site hosted at https://jawaddev-production.up.railway.app
