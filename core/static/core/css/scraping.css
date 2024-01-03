@@ -2,6 +2,10 @@ body.dark-mode .card {
     color: rgba(255, 255, 255, 0.7)
 }
 
+body.dark-mode .client-meta {
+    color: rgba(255, 255, 255, 0.7)
+}
+
 .blockquote-footer {
     display: block;
     margin-top: 10px;
