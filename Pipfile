@@ -20,6 +20,7 @@ django-cors-headers = "*"
 b2 = "*"
 django-storages = "*"
 django-backblazeb2-storage = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
 

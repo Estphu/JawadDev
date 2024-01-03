@@ -1,0 +1,65 @@
+{% extends "core/base.html" %}
+
+{% block title %}Scraping | {{block.super}}{% endblock title %}
+
+{% block content %}
+<article class="blog-post px-3 py-5">
+ <div class="container single-col-max-width">
+    <div class="inner theme-bg-light p-3 mt-2 mb-3">
+        <div class="row">
+            <!-- Quaid Speech -->
+            <div class="col-sm-6">
+                <div class="card theme-bg-light">
+                    <div class="card-body">
+                      <h6 class="card-title">Speech #1: Quaid e Azam</h6>
+                      <ul class="client-meta list-unstyled">
+                        <li class="mb-2">
+                          <i class="fas fa-tag fa-fw me-2" aria-hidden="true"></i>
+                          you are free to go
+                        </li>
+                        <li class="mb-2">
+                          <i class="fas fa-calendar-alt fa-fw me-2" aria-hidden="true"></i>
+                          11th August, 1947
+                        </li>
+                        <li class="mb-2">
+                          <i class="fas fa-map-marker-alt fa-fw me-2" aria-hidden="true"></i>
+                          Assembly Hall, Karachi, Pakistan
+                        </li>
+                      </ul>
+                      <a href="/scraping/quaid-e-azam-speech/" class="btn btn-sm btn-block btn-success">
+                        <i class="fa fa-comment me-1" aria-hidden="true"></i>
+                        View Quaid e Azam Speech
+                      </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card theme-bg-light">
+                    <div class="card-body">
+                      <h6 class="card-title">Speech #1: Abraham Lincoln</h6>
+                      <ul class="client-meta list-unstyled">
+                        <li class="mb-2">
+                          <i class="fas fa-tag fa-fw me-2" aria-hidden="true"></i>
+                          The Gettysburg Address 
+                        </li>
+                        <li class="mb-2">
+                          <i class="fas fa-calendar-alt fa-fw me-2" aria-hidden="true"></i>
+                          19th November, 1863
+                        </li>
+                        <li class="mb-2">
+                          <i class="fas fa-map-marker-alt fa-fw me-2" aria-hidden="true"></i>
+                          Gettysburg, Pennsylvania
+                        </li>
+                      </ul>
+                      <a href="/scraping/abraham-lincoln-speech/" class="btn btn-sm btn-block btn-success">
+                        <i class="fa fa-comment me-1" aria-hidden="true"></i>
+                        View Gettysburg Address 
+                      </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</article>
+{% endblock content %}

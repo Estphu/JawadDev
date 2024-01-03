@@ -40,7 +40,8 @@ urlpatterns = [
     path('api/',include('api.urls', namespace='api')),
     # path('pdf-to-docx/',include('pdftodocx.urls')),
     path('bake-picker/',include('bakepicker.urls')),
-    path('expense-tracker/profile/',include('expensetracker.urls'))
+    path('expense-tracker/profile/',include('expensetracker.urls')),
+    path('scraping/',include('scraping.urls'))
 ]
 
 if settings.DEBUG:

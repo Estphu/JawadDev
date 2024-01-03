@@ -1,0 +1,13 @@
+{% extends "core/base.html" %}
+
+{% block title %}Abraham Lincoln Speech | {{block.super}}{% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'core/css/scraping.css' %}">
+{% endblock links %}
+
+{% block content %}
+    {% with header='Gettysburg Address by Abraham Lincoln: 19-Nov-1863 @ Gettysburg, Pennsylvania, USA' name='Abraham Lincoln' src_link='https://www.goodreads.com/quotes/114791-four-score-and-seven-years-ago-our-fathers-brought-forth'  src_code='https://github.com/Estphu/JawadDev/tree/master/scraping' %}
+        {% include "scraping/widgets/speech_card.html" %}
+    {% endwith %}
+{% endblock content %}

@@ -1,0 +1,31 @@
+<article class="blog-post py-5 px-3">
+    <div class="container single-col-max-width">
+        <!-- Quote Card -->
+        <div class="card theme-bg-light pt-4">
+            <div class="card-header">
+                <strong>{{header}}</strong>
+            </div>
+            <div class="card-body">
+                <em>{{quote}}</em>
+                <footer class="blockquote-footer">
+                    <p>{{name}}</p>
+                    <p>
+                        <strong>Source:</strong>
+                        <a class="theme-link" href="{{src_link}}" target="_blank">{{src_link}}</a>
+                    </p>
+                </footer>
+            </div>
+        </div>
+        <div class="mt-3 mb-3">    
+            Whilst the quoted text below looks like ordinary static text, it has been scraped using Python's
+            third-party library, Beautiful Soup and then rendered to a Django template page.
+        </div>
+        <a href="/scraping/scraping-options/" class="btn btn-sm btn-success">
+            <i class="fa fa-solid fa-rotate-right me-2" aria-hidden="true"></i>
+            Back to Menu
+        </a>
+        <a href="{{src_code}}" class="btn btn-dark btn-sm" target="_blank" rel="noreferrer"><i class="fa fa-brands fa-github mx-2" aria-hidden="true"></i>
+            View Code
+        </a>
+    </div>
+</article>

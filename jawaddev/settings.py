@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     # 'pdftodocx.apps.PdftodocxConfig',
     'bakepicker.apps.BakepickerConfig',
     'expensetracker.apps.ExpensetrackerConfig',
+    'scraping.apps.ScrapingConfig',
 ]
 
 # CKEditor
