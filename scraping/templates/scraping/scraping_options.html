@@ -3,6 +3,10 @@
 
 {% block title %}Scraping | {{block.super}}{% endblock title %}
 
+{% block links %}
+<link rel="stylesheet" href="{% static 'core/css/scraping.css' %}">
+{% endblock links %}
+
 {% block content %}
 <article class="blog-post px-3 py-5">
  <div class="container single-col-max-width">
