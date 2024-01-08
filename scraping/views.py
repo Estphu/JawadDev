@@ -20,7 +20,7 @@ def elections_result(request):
     # Set the path to Chromedriver in the options
     # chrome_options.add_argument('executable_path=/bin/chromedriver.exe')
 
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))  # You might need to adjust the path or use another driver
+    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())  # You might need to adjust the path or use another driver
 
     try:
     # Load the page
