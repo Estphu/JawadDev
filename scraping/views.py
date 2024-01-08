@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.service import Service as ChromiumService
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.os_manager import ChromeType
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -20,7 +21,7 @@ def elections_result(request):
     # Set the path to Chromedriver in the options
     # chrome_options.add_argument('executable_path=/bin/chromedriver.exe')
 
-    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())  # You might need to adjust the path or use another driver
+    driver = webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()))  # You might need to adjust the path or use another driver
 
     try:
     # Load the page
