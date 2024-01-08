@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,13 +14,13 @@ def elections_result(request):
     url = 'https://interactive.aljazeera.com/aje/2018/live-results-pakistan-election-day-2018/index.html'
 
     # Set up the Selenium WebDriver (make sure you have the appropriate driver installed)
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--disable-gpu')
+    # chrome_options = webdriver.ChromeOptions()
+    # chrome_options.add_argument('--headless')
+    # chrome_options.add_argument('--disable-gpu')
     # Set the path to Chromedriver in the options
-    chrome_options.add_argument('executable_path=/bin/chromedriver.exe')
+    # chrome_options.add_argument('executable_path=/bin/chromedriver.exe')
 
-    driver = webdriver.Chrome(options=chrome_options)  # You might need to adjust the path or use another driver
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))  # You might need to adjust the path or use another driver
 
     try:
     # Load the page
