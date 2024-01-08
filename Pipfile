@@ -21,6 +21,7 @@ b2 = "*"
 django-storages = "*"
 django-backblazeb2-storage = "*"
 beautifulsoup4 = "*"
+selenium = "*"
 
 [dev-packages]
 

@@ -11,7 +11,38 @@
 <article class="blog-post px-3 py-5">
  <div class="container single-col-max-width">
     <div class="inner theme-bg-light p-3 mt-2 mb-3">
-        <div class="row">
+        <!-- Pakistan Elections Results -->
+        <p class="card-text mx-3">
+          The purpose of this application is to demonstrate the use of the <em>requests,</em> <em>BeautifulSoup</em>, <em>Selenium</em> for dynamic data handling and <em>re</em> libraries to handle web tasks such as getting content from websites, parsing their HTML and extracting color from style tags.
+        </p>
+        <p class="card-text mx-3">The Django component of the application handles the navigation patterns (urls), the request/response application logic (views) and the rendering of the final result (templates).</p>
+        <div class="card theme-bg-light mb-3">
+          <img src="https://www.globalsecurity.org/military/world/pakistan/images/map-election-2018.jpg" class="card-img-top" alt="Pakistan 2018 Election">
+          <div class="card-body">
+            <h5 class="card-title">
+              <strong>Results: </strong>Pakistan 2018 Elections.
+            </h5>
+            <div class="card-text">
+              <p>
+                <strong>Please be patient waiting for the results page to load</strong> as the process is
+                requesting and scraping data from an Al-Jazeera Page that has dynamic values which means, 
+                the page itself has to request the server to get the data (Selenium is used for interacting).
+                The scraping process should respect the frequency of requests to the Al-Jazeera server.
+              </p>
+              <p>
+                In practice, this sort of process would be set up as something like a scheduled Celery task
+                so fresh data can be accessed directly from the database. Of course, results
+                are dynamic in nature.
+              </p>
+              <p><strong>Note:</strong> Selenium is using chrome for interaction. So, chrome should be installed in your system</p>
+            </div>
+            <a href="{% url 'scraping:elections' %}" class="btn btn-sm btn-block btn-success">
+              <i class="fa fa-bar-chart me-1" aria-hidden="true"></i>
+              View Pakistan Elections Result
+            </a>
+          </div>
+        </div>
+        <div class="row">  
           <!-- Quaid Speech -->
           {% with speech_num="1" name="Quaid e Azam" tag="you are free to go" date="11th August, 1947" location="Assembly Hall, Karachi, Pakistan" url="/scraping/quaid-e-azam-speech/" btn_lbl="Quaid e Azam Speech" %}
             {% include "scraping/widgets/option_sm_card.html" %}

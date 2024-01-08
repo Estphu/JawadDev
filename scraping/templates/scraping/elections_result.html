@@ -1,0 +1,114 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Pakistan 2018 Elections Result |{{block.super}}{% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'core/css/scraping.css' %}">
+{% endblock links %}
+
+{% block content %}
+    <section class="cta-section theme-bg-light py-3 mb-3">
+        <div class="project-intro text-center">
+            <h1 class="mb-4 lead"><strong>Results: Pakistan Elections 2018</strong></h1>
+        </div>
+        <div class="container text-center d-flex justify-content-center">
+            <div id="PPP" class="box">
+                <h4 class="seats-won">43</h4>
+                <div class="party-name px-3 py-1">
+                    <span class="lead"><strong>PPP</strong></span>
+                </div>
+                <img class="party-leader-img" src="{% static 'scraping/images/bilawal.png' %}" alt="Bilawal Bhutto"/>
+            </div>
+            <div id="PTI" class="box">
+                <h4 class="seats-won">117</h4>
+                <div class="party-name px-3 py-1">
+                    <span class="lead"><strong>PTI</strong></span>
+                </div>
+                <img class="party-leader-img" src="{% static 'scraping/images/imran.png' %}" alt="Imran Khan" />
+            </div>
+            <div id="PMLN" class="box">
+                <h4 class="seats-won">63</h4>
+                <div class="party-name px-3 py-1">
+                    <span class="lead"><strong>PMLN</strong></span>
+                </div>
+                <img class="party-leader-img" src="{% static 'scraping/images/shahbaz.png' %}" alt="Shahbaz Sharif" />
+            </div>
+            <div id="OTHER" class="box">
+                <h4 class="seats-won">47</h4>
+                <div class="party-name px-3 py-1">
+                    <span class="lead"><strong>OTHERS</strong></span>
+                </div>
+                <img class="party-leader-img" src="{% static 'scraping/images/other.png' %}" alt="Others" />
+            </div>
+        </div>
+    </section>
+    {% if kpk_results %}
+        <section class="election-result__container px-3 py-3">
+            <div class="project-intro text-center">
+                <h1 class="mb-4 lead"><strong>KHYBER PAKHTUNKWA</strong></h1>
+            </div>
+            {% for constituency_id, result in kpk_results.items %}
+                <div class="card text-center mb-3" style="box-shadow: -10px 0px 0px 3px #{{result.box_shadow_color}}">
+                    <div class="card-header">
+                    <div class="election-result__lbl d-flex flex-row justify-content-around lead">
+                        <p>{{result.id}}</p>
+                        <p>{{result.name|title}}</p>
+                    </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title border-bottom lead">{{result.winner|title}}</h3>
+                        <h3 class="lead">{{result.votes}} VOTES</h3>
+                    </div>
+                    <div class="card-footer d-flex flex-row justify-content-around lead">
+                        <p>{{result.turnout}}<br>TURNOUT</p>
+                        <p>{{result.polled_votes}}<br>VOTES POLLED</p>
+                        <p>{{result.voters}}<br>VOTERS</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="text-small my-4">
+                <strong>Source:</strong> <a class="theme-link" href="https://interactive.aljazeera.com/aje/2018/live-results-pakistan-election-day-2018/index.html" target="_blank">https://interactive.aljazeera.com/aje/2018/live-results-pakistan-election-day-2018/index.html</a>
+            </div>
+            <a href="https://github.com/Estphu/JawadDev/tree/master/bakepicker" class="btn btn-dark btn-sm me-2 mb-3" target="_blank" rel="noreferrer"><i class="fa fa-brands fa-github mx-2" aria-hidden="true"></i>View Code</a>
+        </section>
+    {% else %}
+        <!-- Reload To Solve Issue Start -->
+        <div class="text-center py-3">
+            <p><i class="fa fa-solid fa-circle-info me-2"></i><strong>Don't worry just click the reload button.</strong></p>
+            <a href="{% url 'scraping:elections' %}" class="btn btn-sm btn-success mt-3">
+                <i class="fa fa-solid fa-rotate-right me-2" aria-hidden="true"></i>
+                Reload
+            </a>
+        </div>
+        <!-- Reload To Solve Issue End -->
+    {% endif %}
+    <!-- Party Legends Start -->
+    <div class="row party-legends">
+        <ul class="list-unstyled party-legends__list">
+            <li class="party-legends__item">
+                <i class="fa fa-regular fa-circle me-2" style="color: #f8080d;"></i>PPP
+            </li>
+            <li class="party-legends__item">
+                <i class="fa fa-regular fa-circle me-2" style="color: #33cccc;"></i>PTI
+            </li>
+            <li class="party-legends__item">
+                <i class="fa fa-regular fa-circle me-2" style="color: #006699;"></i>PMLN
+            </li>
+            <li class="party-legends__item">
+                <i class="fa fa-regular fa-circle me-2" style="color: #FFCC00;"></i>MMA
+            </li>
+            <li class="party-legends__item">
+                <i class="fa fa-regular fa-circle me-2" style="color: #996600;"></i>ANP
+            </li>
+            <li class="party-legends__item">
+                <i class="fa fa-regular fa-circle me-2" style="color: #FF9900;"></i>IND.
+            </li>
+            <li class="party-legends__item">
+                <i class="fa fa-regular fa-circle me-2" style="color: #333333;"></i>OTHERS
+            </li>
+        </ul>
+    </div>
+    <!-- Party Legends Start -->
+    
+{% endblock content %}

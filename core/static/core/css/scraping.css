@@ -1,9 +1,33 @@
 body.dark-mode .card {
-    color: rgba(255, 255, 255, 0.7)
+    color: rgba(255, 255, 255, 0.7);
+    background: #151e29;
+}
+
+body.dark-mode .card-header,
+body.dark-mode .card-footer {
+    background: #1e2a3a;
+}
+
+body.dark-mode .party-legends {
+    background: #1e2a3a;
+    border-color: #7532FA;
 }
 
 body.dark-mode .client-meta {
     color: rgba(255, 255, 255, 0.7)
+}
+
+body.dark-mode .card {
+    background-color: #151e29;
+}
+
+.election-result__container {
+    text-align: -webkit-center;
+    text-align: -moz-center;
+}
+
+.election-result__container .card {
+    max-width: 620px;
 }
 
 .blockquote-footer {
@@ -12,3 +36,107 @@ body.dark-mode .client-meta {
     font-size: 80%;
     color: #767676;
 }
+
+.party-leader-img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+.box {
+    align-items: center;
+}
+
+.party-name {
+    color: white;
+    font-weight: bold;
+}
+
+#PPP .party-leader-img {
+    border: 3px solid #f8080d;
+}
+
+#PPP .seats-won {
+    color: #f8080d;
+}
+
+#PPP .party-name {
+    background-color: #f8080d;
+}
+
+#PTI .party-leader-img {
+    border: 3px solid #33cccc;
+}
+
+#PTI .seats-won {
+    color: #33cccc;
+}
+
+#PTI .party-name {
+    background-color: #33cccc;
+}
+
+#PMLN .party-leader-img {
+    border: 3px solid #006699;
+}
+
+#PMLN .seats-won {
+    color: #006699;
+}
+
+#PMLN .party-name {
+    background-color: #006699;
+}
+
+#OTHER .party-leader-img {
+    border: 3px solid #666666;
+}
+
+#OTHER .seats-won {
+    color: #666666;
+}
+
+#OTHER .party-name {
+    background-color: #666666;
+}
+
+.party-legends {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    top: 20vh;
+    margin: 0;
+    border: 1px solid #333333;
+    background: #fff;
+}
+
+.party-legends__list {
+    padding: 0.5rem;
+    margin: 0;
+    font-size: 0.7rem;
+}
+
+.custom-card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-section,
+.result-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.info-section .colored-border {
+    border-bottom: 2px solid #007BFF;
+    /* You can customize the color */
+    padding-bottom: 5px;
+}
+
+/* f8080d PPP */
+/* 32fa4a PTI */
+/* 0819f8 PMLN */
