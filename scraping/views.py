@@ -14,14 +14,17 @@ import re
 def elections_result(request):
     url = 'https://interactive.aljazeera.com/aje/2018/live-results-pakistan-election-day-2018/index.html'
 
-    # Set up the Selenium WebDriver (make sure you have the appropriate driver installed)
-    # chrome_options = webdriver.ChromeOptions()
-    # chrome_options.add_argument('--headless')
-    # chrome_options.add_argument('--disable-gpu')
-    # Set the path to Chromedriver in the options
-    # chrome_options.add_argument('executable_path=/bin/chromedriver.exe')
+    # Get the path to the downloaded EdgeDriver executable
+    edge_driver_path = EdgeChromiumDriverManager().install()
 
-    driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
+    # Specify the path to the Microsoft Edge binary
+    edge_binary_path = '/path/to/microsoft-edge-binary'  # Replace with the actual path
+
+    # Set up Edge options
+    edge_options = webdriver.EdgeOptions()
+    edge_options.binary_location = edge_binary_path
+
+    driver = webdriver.Edge(service=EdgeService(executable_path=edge_driver_path), options=edge_options)
 
     try:
     # Load the page
