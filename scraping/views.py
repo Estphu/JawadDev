@@ -19,14 +19,13 @@ def elections_result(request):
     # Specify the path to the Chrome binary
     # Get the Chrome binary path
     chrome_binary_path = get_chrome_binary_path()
-    determined_browser_version = ChromeDriverManager(chrome_type='google-chrome').get_version()
 
     # Set up Chrome options
     chrome_options = webdriver.ChromeOptions()
     # chrome_options.binary_location = webdriver_path
     chrome_options.add_argument('--headless')
 
-    chrome_driver_path = ChromeDriverManager(chrome_type='google-chrome', version=determined_browser_version).install()
+    chrome_driver_path = ChromeDriverManager(chrome_type='google-chrome').install()
 
     chrome_options.binary_location = chrome_binary_path
 
