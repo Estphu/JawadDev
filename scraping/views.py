@@ -1,3 +1,5 @@
+import platform
+import subprocess
 from django.shortcuts import render
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -15,18 +17,20 @@ def elections_result(request):
     url = 'https://interactive.aljazeera.com/aje/2018/live-results-pakistan-election-day-2018/index.html'
 
     # Specify the path to the Chrome binary
-    # webdriver_path = '/bin/chromedriver.exe'  # Replace with the actual path
+    # Get the Chrome binary path
+    chrome_binary_path = get_chrome_binary_path()
+    determined_browser_version = ChromeDriverManager(chrome_type='google-chrome', binary_path=chrome_binary_path).get_version()
 
     # Set up Chrome options
     chrome_options = webdriver.ChromeOptions()
     # chrome_options.binary_location = webdriver_path
     chrome_options.add_argument('--headless')
 
-    installed_chrome = ChromeService(ChromeDriverManager().install())
+    chrome_driver_path = ChromeDriverManager(chrome_type='google-chrome', version=determined_browser_version).install()
 
-    print(ChromeDriverManager())
+    chrome_options.binary_location = chrome_binary_path
 
-    driver = webdriver.Chrome(service=installed_chrome,options=chrome_options)
+    driver = webdriver.Chrome(service=ChromeService(chrome_driver_path),options=chrome_options)
 
     try:
     # Load the page
@@ -118,3 +122,18 @@ def scraper(url):
 
     return quote
     
+def get_chrome_binary_path():
+    if platform.system() == 'Windows':
+        # Default installation path on Windows
+        return r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+    elif platform.system() == 'Linux':
+        # Try to find the path on Linux
+        try:
+            return subprocess.check_output(['which', 'google-chrome'], text=True).strip()
+        except subprocess.CalledProcessError:
+            return None
+    elif platform.system() == 'Darwin':
+        # Default installation path on macOS
+        return "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    else:
+        return None    
