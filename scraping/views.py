@@ -22,7 +22,11 @@ def elections_result(request):
     # chrome_options.binary_location = webdriver_path
     chrome_options.add_argument('--headless')
 
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=chrome_options)
+    installed_chrome = ChromeService(ChromeDriverManager().install())
+
+    print(ChromeDriverManager())
+
+    driver = webdriver.Chrome(service=installed_chrome,options=chrome_options)
 
     try:
     # Load the page
