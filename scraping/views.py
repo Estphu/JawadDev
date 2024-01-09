@@ -124,7 +124,7 @@ def scraper(url):
 def get_chrome_binary_path():
     if platform.system() == 'Windows':
         # Default installation path on Windows
-        return r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+        return r"C:/Program Files/Google/Chrome/Application/chrome.exe"
     elif platform.system() == 'Linux':
         # Try to find the path on Linux
         try:
