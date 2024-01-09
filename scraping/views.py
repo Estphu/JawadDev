@@ -18,7 +18,7 @@ def elections_result(request):
 
     # Specify the path to the Chrome binary
     # Get the Chrome binary path
-    chrome_binary_path = get_chrome_binary_path()
+    chrome_binary_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 
     print(chrome_binary_path)
 
