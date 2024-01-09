@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from selenium import webdriver
-from selenium.webdriver.edge.service import Service as EdgeService
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.os_manager import ChromeType
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -14,17 +14,15 @@ import re
 def elections_result(request):
     url = 'https://interactive.aljazeera.com/aje/2018/live-results-pakistan-election-day-2018/index.html'
 
-    # Get the path to the downloaded EdgeDriver executable
-    edge_driver_path = EdgeChromiumDriverManager().install()
+    # Specify the path to the Chrome binary
+    # webdriver_path = '/bin/chromedriver.exe'  # Replace with the actual path
 
-    # Specify the path to the Microsoft Edge binary
-    edge_binary_path = '/path/to/microsoft-edge-binary'  # Replace with the actual path
+    # Set up Chrome options
+    chrome_options = webdriver.ChromeOptions()
+    # chrome_options.binary_location = webdriver_path
+    chrome_options.add_argument('--headless')
 
-    # Set up Edge options
-    edge_options = webdriver.EdgeOptions()
-    edge_options.binary_location = edge_binary_path
-
-    driver = webdriver.Edge(service=EdgeService(executable_path=edge_driver_path), options=edge_options)
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=chrome_options)
 
     try:
     # Load the page
