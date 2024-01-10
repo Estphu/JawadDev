@@ -18,8 +18,9 @@ def elections_result(request):
 
     # Specify the path to the Chrome binary
     # Get the Chrome binary path
-    chrome_binary_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+    chrome_binary_path = get_chrome_binary_path()
 
+    print(platform.system())
     print(chrome_binary_path)
 
     # Set up Chrome options
@@ -124,6 +125,7 @@ def scraper(url):
     return quote
     
 def get_chrome_binary_path():
+    print(platform.system())
     if platform.system() == 'Windows':
         # Default installation path on Windows
         return r"C:\Program Files\Google\Chrome\Application\chrome.exe"
