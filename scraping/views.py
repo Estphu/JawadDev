@@ -4,6 +4,7 @@ from django.shortcuts import render
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.os_manager import OperationSystemManager
 from webdriver_manager.core.os_manager import ChromeType
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -28,7 +29,7 @@ def elections_result(request):
     # chrome_options.binary_location = webdriver_path
     chrome_options.add_argument('--headless')
 
-    chrome_driver_path = ChromeDriverManager(os_system_manager='linux', chrome_type='google-chrome').install()
+    chrome_driver_path = ChromeDriverManager(OperationSystemManager(os_type="linux-mips64"), chrome_type='google-chrome').install()
 
     chrome_options.binary_location = chrome_binary_path
 
