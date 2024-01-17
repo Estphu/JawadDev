@@ -29,7 +29,7 @@ def elections_result(request):
     # chrome_options.binary_location = webdriver_path
     chrome_options.add_argument('--headless')
 
-    chrome_driver_path = ChromeDriverManager(OperationSystemManager(os_type="linux-mips64"), chrome_type='google-chrome', driver_version="106.0.5249.61").install()
+    chrome_driver_path = ChromeDriverManager(OperationSystemManager(os_type="linux-mips64"), chrome_type='google-chrome').install()
     driver_version_to_download = ChromeDriverManager()._get_driver_binary_path()
     print("Driver Version to Download:", driver_version_to_download)
     chrome_options.binary_location = chrome_binary_path
