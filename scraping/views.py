@@ -21,20 +21,11 @@ def elections_result(request):
     # Get the Chrome binary path
     chrome_binary_path = get_chrome_binary_path()
 
-    print(platform.system())
-    print(chrome_binary_path)
-
     # Set up Chrome options
     chrome_options = webdriver.ChromeOptions()
-    # chrome_options.binary_location = webdriver_path
     chrome_options.add_argument('--headless')
 
-    chrome_driver_path = ChromeDriverManager(OperationSystemManager(os_type="linux"), chrome_type='google-chrome').install()
-    driver_version_to_download = ChromeDriverManager()._get_driver_binary_path()
-    print("Driver Version to Download:", driver_version_to_download)
-    chrome_options.binary_location = chrome_binary_path
-
-    driver = webdriver.Chrome(service=ChromeService(chrome_driver_path),options=chrome_options)
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager(chrome_type='google-chrome', chrome_binary_path='bin/').install()),options=chrome_options)
 
     try:
     # Load the page
